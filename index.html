@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="機械学習によるボートレース(競艇)予想。毎朝の予想レポートと毎晩の的中実績を全公開。">
+<title>BoatAI — AIボートレース予想</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="lane-dots" aria-hidden="true">
+      <span class="d d1"></span><span class="d d2"></span><span class="d d3"></span>
+      <span class="d d4"></span><span class="d d5"></span><span class="d d6"></span>
+    </div>
+    <h1>AIボートレース予想 <span class="brand">BoatAI</span></h1>
+    <p class="tagline">機械学習モデルが毎朝、全レースの1着確率と3連単上位10点を予測。<br>夜には結果と答え合わせを<strong>隠さず全公開</strong>します。</p>
+    <div class="cta-row">
+      <a id="btn-today" class="cta cta-main" href="#reports">今日の予想レポートを見る</a>
+      <a id="btn-results" class="cta cta-sub" href="#reports">昨夜の結果・答え合わせ</a>
+    </div>
+    <!-- 航跡を走るボート -->
+    <div class="boat-track" aria-hidden="true">
+      <div class="boat"></div>
+      <div class="wake"></div>
+    </div>
+  </div>
+  <!-- CSSだけの波アニメーション -->
+  <div class="waves" aria-hidden="true">
+    <div class="wave w1"></div>
+    <div class="wave w2"></div>
+    <div class="wave w3"></div>
+  </div>
+</header>
+
+<main>
+  <section id="stats" class="section">
+    <h2><span class="bar-accent"></span>的中実績</h2>
+    <div id="stats-cards" class="stat-cards">
+      <p class="placeholder">実績データを読み込み中…</p>
+    </div>
+    <div class="chart-box">
+      <canvas id="stats-chart" height="220"></canvas>
+      <p id="chart-fallback" class="placeholder" hidden>実績データがまだありません。毎晩の結果レポート公開後にここへ推移グラフが表示されます。</p>
+    </div>
+    <p class="note">上位10点内的中率 = 3連単の的中組合せがモデル予想の上位10点に入っていた割合 / 1点買い収支 = モデル1位の3連単を毎レース100円買った場合の仮想収支。良い日も悪い日もそのまま載せています。</p>
+  </section>
+
+  <section id="reports" class="section">
+    <h2><span class="bar-accent"></span>レポート一覧</h2>
+    <div class="report-cols">
+      <div class="report-col">
+        <h3>朝の予想レポート</h3>
+        <ul id="list-daily" class="report-list"><li class="placeholder">読み込み中…</li></ul>
+      </div>
+      <div class="report-col">
+        <h3>夜の結果・答え合わせ</h3>
+        <ul id="list-results" class="report-list"><li class="placeholder">読み込み中…</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2><span class="bar-accent"></span>BoatAIについて</h2>
+    <p>公式の番組表・競走成績データを学習した機械学習モデル(LightGBM)が、各レースの6艇の1着率・2連対率・3連対率と3連単120通りの確率を推定しています。朝は展示航走前の「朝モデル」で予想し、夜に結果と突き合わせて精度を検証。予想も結果もすべて自動生成・自動公開です。</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="disclaimer-f">本サイトは機械学習による予想の参考情報です。的中を保証するものではありません。舟券の購入は自己責任でお願いします。<strong>20歳未満の方の舟券購入は法律で禁止されています。</strong></p>
+    <p class="copy">BoatAI — AI Boatrace Prediction</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

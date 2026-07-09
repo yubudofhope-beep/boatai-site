@@ -1,0 +1,118 @@
+/* BoatAI — ナイターレースをイメージしたダーク基調 + 6艇色アクセント */
+:root{
+  --bg:#0b1220;        /* 夜空 */
+  --bg2:#0e1a2f;
+  --water:#0a2a4a;     /* 夜の水面 */
+  --text:#e5e9f0;
+  --muted:#9aa5b5;
+  --accent:#4fc3f7;    /* ナイター照明のブルー */
+  --l1:#f5f5f5; --l2:#333333; --l3:#e53935;
+  --l4:#1e88e5; --l5:#fdd835; --l6:#43a047;
+  --card:#131f33;
+  --border:#22314a;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:'Hiragino Sans','Yu Gothic',Meiryo,sans-serif;
+     background:var(--bg);color:var(--text);line-height:1.7;}
+a{color:var(--accent);}
+
+/* ---------- ヒーロー ---------- */
+.hero{position:relative;overflow:hidden;
+      background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 55%,var(--water) 100%);
+      padding:48px 16px 120px;text-align:center;}
+.hero-inner{position:relative;z-index:3;max-width:760px;margin:0 auto;}
+.hero h1{font-size:clamp(24px,6vw,40px);margin:14px 0 8px;letter-spacing:.02em;}
+.brand{color:var(--accent);text-shadow:0 0 18px rgba(79,195,247,.55);}
+.tagline{color:var(--muted);font-size:clamp(13px,3.5vw,16px);margin:0 0 22px;}
+.tagline strong{color:var(--text);}
+
+/* 6艇色のドット */
+.lane-dots{display:flex;justify-content:center;gap:8px;}
+.d{width:14px;height:14px;border-radius:50%;border:1px solid rgba(255,255,255,.25);
+   animation:bob 2.4s ease-in-out infinite;}
+.d1{background:var(--l1);} .d2{background:var(--l2);animation-delay:.15s;}
+.d3{background:var(--l3);animation-delay:.3s;} .d4{background:var(--l4);animation-delay:.45s;}
+.d5{background:var(--l5);animation-delay:.6s;} .d6{background:var(--l6);animation-delay:.75s;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+
+/* CTAボタン */
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.cta{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:bold;
+     text-decoration:none;font-size:clamp(14px,4vw,17px);transition:transform .15s,box-shadow .15s;}
+.cta-main{background:linear-gradient(135deg,#29b6f6,#1565c0);color:#fff;
+          box-shadow:0 4px 20px rgba(41,182,246,.45);}
+.cta-sub{background:transparent;color:var(--accent);border:2px solid var(--accent);}
+.cta:hover{transform:translateY(-2px);box-shadow:0 6px 26px rgba(41,182,246,.6);}
+.cta.disabled{opacity:.45;pointer-events:none;}
+
+/* 走るボート + 航跡 */
+.boat-track{position:relative;height:40px;margin-top:34px;overflow:hidden;}
+.boat{position:absolute;top:6px;left:-60px;width:46px;height:16px;border-radius:50% 60% 30% 30%;
+      background:linear-gradient(135deg,var(--l4),#0d47a1);
+      box-shadow:0 0 12px rgba(79,195,247,.8);
+      animation:run 7s linear infinite;}
+.boat::before{content:"";position:absolute;top:-7px;left:14px;width:14px;height:9px;
+      border-radius:4px 8px 0 0;background:var(--l5);}
+.wake{position:absolute;top:14px;left:-60px;width:0;height:3px;border-radius:2px;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.55));
+      animation:wake 7s linear infinite;}
+@keyframes run{0%{left:-60px;}100%{left:105%;}}
+@keyframes wake{0%{left:-60px;width:0;}20%{width:120px;}100%{left:105%;width:160px;opacity:0;}}
+
+/* 波 (3層のCSSアニメーション) */
+.waves{position:absolute;left:0;right:0;bottom:0;height:90px;z-index:1;}
+.wave{position:absolute;bottom:0;left:0;width:200%;height:100%;
+      background-repeat:repeat-x;background-size:50% 100%;}
+.w1{background-image:radial-gradient(ellipse 60% 100% at 25% 100%,rgba(41,182,246,.35) 40%,transparent 41%),
+                     radial-gradient(ellipse 60% 100% at 75% 100%,rgba(41,182,246,.35) 40%,transparent 41%);
+    animation:drift 9s linear infinite;opacity:.9;}
+.w2{background-image:radial-gradient(ellipse 70% 90% at 30% 100%,rgba(21,101,192,.5) 42%,transparent 43%),
+                     radial-gradient(ellipse 70% 90% at 80% 100%,rgba(21,101,192,.5) 42%,transparent 43%);
+    animation:drift 14s linear infinite reverse;}
+.w3{background-image:radial-gradient(ellipse 80% 80% at 20% 100%,rgba(10,42,74,.95) 45%,transparent 46%),
+                     radial-gradient(ellipse 80% 80% at 70% 100%,rgba(10,42,74,.95) 45%,transparent 46%);
+    animation:drift 20s linear infinite;}
+@keyframes drift{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+@media (prefers-reduced-motion:reduce){
+  .boat,.wake,.wave,.d{animation:none;}
+}
+
+/* ---------- セクション ---------- */
+main{max-width:900px;margin:0 auto;padding:8px 16px 40px;}
+.section{margin:36px 0;}
+.section h2{font-size:20px;display:flex;align-items:center;gap:10px;}
+.bar-accent{display:inline-block;width:6px;height:22px;border-radius:3px;
+  background:linear-gradient(180deg,var(--l3),var(--l4),var(--l6));}
+.section h3{font-size:15px;color:var(--accent);margin:12px 0 6px;}
+.note,.placeholder{color:var(--muted);font-size:12px;}
+
+/* 実績カード */
+.stat-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;}
+.scard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;}
+.scard .k{font-size:11px;color:var(--muted);}
+.scard .v{font-size:22px;font-weight:bold;font-variant-numeric:tabular-nums;}
+.scard .v.plus{color:#66bb6a;} .scard .v.minus{color:#ef5350;}
+.chart-box{background:var(--card);border:1px solid var(--border);border-radius:10px;
+           padding:14px;margin-top:14px;}
+
+/* レポート一覧 */
+.report-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:640px){.report-cols{grid-template-columns:1fr;}}
+.report-list{list-style:none;margin:0;padding:0;max-height:320px;overflow-y:auto;}
+.report-list li{border-bottom:1px solid var(--border);}
+.report-list a{display:block;padding:9px 6px;text-decoration:none;color:var(--text);
+               border-radius:6px;transition:background .12s;}
+.report-list a:hover{background:var(--card);color:var(--accent);}
+.report-list .date{font-variant-numeric:tabular-nums;font-weight:bold;}
+.report-list .lbl{font-size:11px;color:var(--muted);margin-left:8px;}
+.tag-new{display:inline-block;margin-left:8px;padding:1px 8px;border-radius:999px;
+         font-size:10px;font-weight:bold;background:var(--l3);color:#fff;}
+
+/* フッター */
+.footer{background:#060b14;border-top:1px solid var(--border);padding:24px 16px;}
+.footer-inner{max-width:900px;margin:0 auto;}
+.disclaimer-f{font-size:12px;color:var(--muted);background:rgba(255,255,255,.04);
+              border:1px solid var(--border);border-radius:8px;padding:12px;}
+.disclaimer-f strong{color:#ffb74d;}
+.copy{font-size:11px;color:#5a6578;text-align:center;margin-top:10px;}
