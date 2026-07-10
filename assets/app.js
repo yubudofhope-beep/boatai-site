@@ -202,10 +202,14 @@
     var hits = h.items.filter(function (i) { return i.hit; });
     if (!hits.length) { bar.hidden = true; return; }
     var parts = hits.map(function (i) {
-      return '<span class="tk-item">HIT ' + esc(i.venue) + " " + esc(i.rno) + "R "
+      // 上位10点内=緑 / 11-20位=黄緑 で色分け
+      var deep = i.model_rank && i.model_rank > 10;
+      return '<span class="tk-item' + (deep ? " tk-deep" : "") + '">HIT '
+        + esc(i.venue) + " " + esc(i.rno) + "R "
         + '<strong>' + esc(i.combo) + "</strong> "
         + (i.payout ? '<span class="tk-pay">' + Number(i.payout).toLocaleString() + "円</span>" : "")
-        + (i.model_rank ? '<span class="muted">(AI' + esc(i.model_rank) + "位)</span>" : "")
+        + (i.model_rank ? '<span class="' + (deep ? "tk-r20" : "tk-r10")
+          + '">(AI' + esc(i.model_rank) + "位)</span>" : "")
         + "</span>";
     });
     // ループ用に2周分並べる
@@ -308,22 +312,37 @@
     }
     var last = valid[valid.length - 1];
     var totalPnl = 0, totalTop10 = 0, totalWin = 0, totalN = 0;
+    var totalTop20 = 0, totalN20 = 0; // top20 は新形式レポートの日のみ集計
     valid.forEach(function (s) {
       totalPnl += s.pnl || 0;
       totalTop10 += s.top10_hits || 0;
       totalWin += s.win_hits || 0;
       totalN += s.n_judged || 0;
+      if (s.top20_hits != null) {
+        totalTop20 += s.top20_hits;
+        totalN20 += s.n_judged || 0;
+      }
     });
     if (cardsEl) {
-      cardsEl.innerHTML =
+      var htmlCards =
         card("昨日の上位10点内的中", (last.top10_hits ?? "-") + "/" + last.n_judged +
-          " (" + (last.top10_rate ?? "-") + "%)") +
+          " (" + (last.top10_rate ?? "-") + "%)");
+      if (last.top20_hits != null) {
+        htmlCards += card("昨日の上位20点内的中", last.top20_hits + "/" + last.n_judged +
+          " (" + (last.top20_rate ?? "-") + "%)");
+      }
+      htmlCards +=
         card("昨日の1点買い収支", (last.pnl >= 0 ? "+" : "") + (last.pnl ?? 0).toLocaleString() + "円",
           last.pnl >= 0 ? "plus" : "minus") +
-        card("累計 上位10点内率", totalN ? Math.round(totalTop10 / totalN * 100) + "%" : "-") +
+        card("累計 上位10点内率", totalN ? Math.round(totalTop10 / totalN * 100) + "%" : "-");
+      if (totalN20) {
+        htmlCards += card("累計 上位20点内率", Math.round(totalTop20 / totalN20 * 100) + "%");
+      }
+      htmlCards +=
         card("累計 1点買い収支 (" + valid.length + "日)",
           (totalPnl >= 0 ? "+" : "") + totalPnl.toLocaleString() + "円",
           totalPnl >= 0 ? "plus" : "minus");
+      cardsEl.innerHTML = htmlCards;
     }
     drawChart(canvas, fb, valid);
   }

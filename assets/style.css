@@ -134,6 +134,9 @@ main{max-width:900px;margin:0 auto;padding:8px 16px 40px;}
 .tk-item{display:inline-block;margin:0 22px;font-size:13px;color:#c8e6c9;}
 .tk-item strong{color:#fff;}
 .tk-pay{color:#ffd54f;font-weight:bold;font-variant-numeric:tabular-nums;}
+.tk-r10{color:#a5d6a7;font-size:11px;}   /* AI上位10点内 = 緑 */
+.tk-r20{color:#dce775;font-size:11px;}   /* AI11-20位 = 黄緑 */
+.tk-item.tk-deep{color:#e6ee9c;}
 @keyframes tickscroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
 /* まもなく締切カード */
