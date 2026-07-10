@@ -109,6 +109,92 @@ main{max-width:900px;margin:0 auto;padding:8px 16px 40px;}
 .tag-new{display:inline-block;margin-left:8px;padding:1px 8px;border-radius:999px;
          font-size:10px;font-weight:bold;background:var(--l3);color:#fff;}
 
+/* ---------- レース起点UI ---------- */
+.hero-compact{padding-bottom:90px;}
+.muted{color:var(--muted);}
+.h-sub{font-size:12px;color:var(--muted);font-weight:normal;}
+.laneb{display:inline-block;width:18px;height:18px;line-height:18px;text-align:center;
+  border-radius:4px;font-weight:bold;font-size:12px;border:1px solid rgba(255,255,255,.25);}
+.chip{display:inline-block;font-size:10px;font-weight:bold;padding:1px 8px;border-radius:999px;}
+.chip-solid{background:rgba(102,187,106,.15);color:#66bb6a;border:1px solid rgba(102,187,106,.4);}
+.chip-mid{background:rgba(154,165,181,.12);color:var(--muted);border:1px solid var(--border);}
+.chip-rough{background:rgba(239,83,80,.15);color:#ef5350;border:1px solid rgba(239,83,80,.4);}
+.chip-hot{background:var(--l3);color:#fff;animation:pulse 1.2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.55;}}
+
+/* 的中速報ティッカー */
+.ticker{display:flex;align-items:center;gap:0;background:#132a17;
+  border-top:1px solid #1d4423;border-bottom:1px solid #1d4423;overflow:hidden;}
+.ticker-label{flex:none;background:#2e7d32;color:#fff;font-size:12px;font-weight:bold;
+  padding:6px 12px;}
+.ticker-viewport{flex:1;overflow:hidden;white-space:nowrap;}
+.ticker-track{display:inline-block;white-space:nowrap;padding:6px 0;
+  animation:tickscroll 30s linear infinite;}
+.ticker:hover .ticker-track{animation-play-state:paused;}
+.tk-item{display:inline-block;margin:0 22px;font-size:13px;color:#c8e6c9;}
+.tk-item strong{color:#fff;}
+.tk-pay{color:#ffd54f;font-weight:bold;font-variant-numeric:tabular-nums;}
+@keyframes tickscroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* まもなく締切カード */
+.soon-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;}
+.soon-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:12px;text-decoration:none;color:var(--text);
+  transition:transform .12s,border-color .12s;}
+.soon-card:hover{transform:translateY(-2px);border-color:var(--accent);}
+.sc-top{display:flex;justify-content:space-between;align-items:center;gap:6px;}
+.sc-venue{font-weight:bold;font-size:14px;}
+.sc-cd{font-size:26px;font-weight:bold;font-variant-numeric:tabular-nums;
+  color:var(--accent);margin:4px 0 0;}
+.sc-cd.hot{color:#ef5350;}
+.sc-dl{font-size:11px;color:var(--muted);}
+.sc-honmei{margin-top:6px;font-size:13px;}
+.sc-combo{font-size:11px;color:var(--muted);margin-top:2px;font-variant-numeric:tabular-nums;}
+
+/* 本日のレース場グリッド */
+.venue-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;}
+.vcard{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:10px 12px;text-decoration:none;color:var(--text);
+  transition:transform .12s,border-color .12s;}
+.vcard:hover{transform:translateY(-2px);border-color:var(--accent);}
+.vcard-hot{border-color:rgba(229,57,53,.6);box-shadow:0 0 10px rgba(229,57,53,.25);}
+.vcard-done{opacity:.55;}
+.vc-name{font-weight:bold;font-size:14px;}
+.vc-next{font-size:12px;margin-top:4px;}
+.vc-dl{color:var(--accent);font-variant-numeric:tabular-nums;}
+.venue-closed{margin-top:10px;}
+.venue-closed summary{font-size:12px;color:var(--muted);cursor:pointer;}
+
+/* 鉄板 / 波乱 */
+.picks-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:640px){.picks-cols{grid-template-columns:1fr;}}
+.pick-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+.pick-h.solid-h{color:#66bb6a;} .pick-h.rough-h{color:#ef5350;}
+.pick-note{font-size:10px;color:var(--muted);font-weight:normal;}
+.pick-list{list-style:none;margin:0;padding:0;}
+.pick-list li{border-bottom:1px solid var(--border);}
+.pick-list a{display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  padding:8px 6px;text-decoration:none;color:var(--text);border-radius:6px;
+  font-size:13px;transition:background .12s;}
+.pick-list a:hover{background:var(--card);}
+.pk-race{font-weight:bold;min-width:90px;}
+.pk-dl{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums;}
+.pk-honmei{font-variant-numeric:tabular-nums;}
+.pk-combo{margin-left:auto;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums;}
+
+/* AIの目が変わったレース */
+.delta-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;}
+.delta-card{display:block;background:rgba(255,183,77,.06);border:1px solid rgba(255,183,77,.35);
+  border-radius:10px;padding:10px 12px;text-decoration:none;color:var(--text);
+  transition:transform .12s;}
+.delta-card:hover{transform:translateY(-2px);}
+.dc-race{font-weight:bold;font-size:13px;}
+.dc-comment{font-size:12px;color:#ffb74d;margin-top:4px;}
+
+@media (prefers-reduced-motion:reduce){
+  .ticker-track,.chip-hot{animation:none;}
+}
+
 /* フッター */
 .footer{background:#060b14;border-top:1px solid var(--border);padding:24px 16px;}
 .footer-inner{max-width:900px;margin:0 auto;}
