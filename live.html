@@ -86,18 +86,27 @@ details.tri summary{font-size:12px;color:var(--muted);cursor:pointer;}
       + '<span class="v">' + esc(VENUES[r.jcd] || r.jcd) + ' ' + esc(r.rno) + 'R</span>'
       + '<span class="dl">締切 ' + esc(r.deadline || "?") + '</span></div>';
     if (r.delta_comment) h += '<div class="comment">' + esc(r.delta_comment) + '</div>';
-    h += '<table class="ltab"><tr><th>艇</th><th>朝の1着率</th><th>直前1着率</th><th>変化</th><th>展示タイム</th></tr>';
+    var tj = r.tenji || null;                       // 周回展示 (対応場のみ)
+    var hasTj = tj && Object.keys(tj).length > 0;
+    h += '<table class="ltab"><tr><th>艇</th><th>朝の1着率</th><th>直前1着率</th><th>変化</th><th>展示タイム</th>'
+      + (hasTj ? '<th>一周</th><th>まわり足</th>' : '') + '</tr>';
     var wp = r.win_prob || {}, mp = r.morning_win_prob || null, ex = r.exhibition || {};
+    function num(v, d){ return v != null ? Number(v).toFixed(d) : "-"; }
     for (var l = 1; l <= 6; l++){
       var k = String(l), now = wp[k], morn = mp ? mp[k] : null;
+      var t = hasTj ? (tj[k] || {}) : {};
       h += '<tr><td><span class="laneb" style="background:' + LANE_BG[l]
         + ';color:' + LANE_FG[l] + '">' + l + '</span></td>'
         + '<td>' + (morn != null ? pct(morn) : "-") + '</td>'
         + '<td><strong>' + (now != null ? pct(now) : "-") + '</strong></td>'
         + '<td>' + (now != null ? arrow(now, morn) : "-") + '</td>'
-        + '<td>' + (ex[k] != null ? Number(ex[k]).toFixed(2) : "-") + '</td></tr>';
+        + '<td>' + num(ex[k], 2) + '</td>'
+        + (hasTj ? '<td>' + num(t.lap, 2) + '</td><td>' + num(t.mawari, 2) + '</td>' : '')
+        + '</tr>';
     }
     h += '</table>';
+    if (hasTj) h += '<p class="small" style="color:var(--muted);font-size:11px;margin:4px 0 0;">'
+      + '周回展示は場公式サイトの独自計測値 (対応場のみ)</p>';
     var top = r.top10 || [];
     if (top.length){
       h += '<details class="tri" open><summary>3連単 上位10点</summary><div class="combos-live">';
