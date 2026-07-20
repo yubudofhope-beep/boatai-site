@@ -142,11 +142,17 @@
         body = '<div class="vc-next muted">本日終了</div>';
         cls += " vcard-done";
       }
-      var href = next ? raceLink(next.r.race_id)
-        : (state.dailyDates.indexOf(state.date) >= 0
-          ? "daily/daily_report_" + state.date + ".html" : "live.html");
-      return '<a class="' + cls + '" href="' + href + '">'
-        + '<div class="vc-name">' + esc(v.name) + "</div>" + body + "</a>";
+      // 全レースへのミニボタン (1R〜12R)。終了レースは薄く、次レースは光る
+      var rlinks = (v.races || []).map(function (r) {
+        var dl = deadlineDate(r.deadline);
+        var c = "rlink";
+        if (next && r.race_id === next.r.race_id) c += " rlink-next";
+        else if (dl && dl <= now) c += " rlink-done";
+        return '<a class="' + c + '" href="' + raceLink(r.race_id) + '">' + esc(r.rno) + "</a>";
+      }).join("");
+      return '<div class="' + cls + '">'
+        + '<div class="vc-name">' + esc(v.name) + "</div>" + body
+        + '<div class="vc-races">' + rlinks + "</div></div>";
     }).join("");
     // 非開催場は畳んで小さく
     var openNames = state.today.venues.map(function (v) { return v.name; });
@@ -201,13 +207,13 @@
     var parts = hits.map(function (i) {
       // 上位10点内=緑 / 11-20位=黄緑 で色分け
       var deep = i.model_rank && i.model_rank > 10;
-      return '<span class="tk-item' + (deep ? " tk-deep" : "") + '">HIT '
+      return '<a class="tk-item' + (deep ? " tk-deep" : "") + '" href="race.html?id=' + esc(i.race_id) + '">HIT '
         + esc(i.venue) + " " + esc(i.rno) + "R "
         + '<strong>' + esc(i.combo) + "</strong> "
         + (i.payout ? '<span class="tk-pay">' + Number(i.payout).toLocaleString() + "円</span>" : "")
         + (i.model_rank ? '<span class="' + (deep ? "tk-r20" : "tk-r10")
           + '">(AI' + esc(i.model_rank) + "位)</span>" : "")
-        + "</span>";
+        + "</a>";
     });
     // ループ用に2周分並べる
     track.innerHTML = parts.join("") + parts.join("");

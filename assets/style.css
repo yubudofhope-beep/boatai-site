@@ -149,7 +149,9 @@ main{max-width:960px;margin:0 auto;padding:8px 16px 40px;}
 .ticker-track{display:inline-block;white-space:nowrap;padding:6px 0;
   animation:tickscroll 30s linear infinite;}
 .ticker:hover .ticker-track{animation-play-state:paused;}
-.tk-item{display:inline-block;margin:0 22px;font-size:13px;color:#b9f6ca;}
+.tk-item{display:inline-block;margin:0 22px;font-size:13px;color:#b9f6ca;
+  text-decoration:none;}
+.tk-item:hover{text-decoration:underline;}
 .tk-item strong{color:#fff;}
 .tk-pay{color:var(--gold);font-weight:bold;font-variant-numeric:tabular-nums;}
 .tk-r10{color:#69f0ae;font-size:11px;}
@@ -173,9 +175,19 @@ main{max-width:960px;margin:0 auto;padding:8px 16px 40px;}
 
 /* 本日のレース場グリッド */
 .venue-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;}
-.vcard{display:block;border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--text);
-  transition:transform .12s,border-color .12s,box-shadow .12s;}
-.vcard:hover{transform:translateY(-3px);border-color:var(--border2);box-shadow:var(--glow);}
+.venue-grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr));}
+.vcard{display:block;border-radius:12px;padding:10px 12px;color:var(--text);
+  transition:border-color .12s,box-shadow .12s;}
+.vcard:hover{border-color:var(--border2);box-shadow:var(--glow);}
+.vc-races{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;}
+.rlink{display:inline-block;min-width:24px;height:24px;line-height:22px;text-align:center;
+  border-radius:6px;font-size:11px;font-weight:bold;text-decoration:none;
+  color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border);
+  transition:all .12s;}
+.rlink:hover{color:var(--accent);border-color:var(--border2);background:rgba(0,229,255,.1);}
+.rlink-next{color:#03121c;background:linear-gradient(135deg,var(--accent),var(--accent2));
+  border-color:transparent;box-shadow:0 0 8px rgba(0,229,255,.45);}
+.rlink-done{opacity:.4;}
 .vcard-hot{border-color:rgba(255,82,82,.6);box-shadow:0 0 12px rgba(255,82,82,.3);}
 .vcard-done{opacity:.55;}
 .vc-name{font-weight:bold;font-size:14px;}
