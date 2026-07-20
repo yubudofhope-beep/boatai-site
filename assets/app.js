@@ -49,11 +49,8 @@
     if (!flag) return "";
     return '<span class="chip chip-' + esc(flag) + '">' + (FLAG_LABEL[flag] || esc(flag)) + "</span>";
   }
-  function raceLink(raceId) { // 当日レポートの該当レースへ / 無ければライブへ
-    if (state.dailyDates.indexOf(state.date) >= 0) {
-      return "daily/daily_report_" + state.date + ".html#r" + encodeURIComponent(raceId);
-    }
-    return "live.html";
+  function raceLink(raceId) { // レース詳細ページ (予想+結果を1画面)
+    return "race.html?id=" + encodeURIComponent(raceId);
   }
 
   // 当日全レースをフラット化 [{race_id,jcd,venue,rno,deadline,dl(Date),...}]
@@ -233,7 +230,7 @@
       "12":"住之江","13":"尼崎","14":"鳴門","15":"丸亀","16":"児島","17":"宮島",
       "18":"徳山","19":"下関","20":"若松","21":"芦屋","22":"福岡","23":"唐津","24":"大村"};
     box.innerHTML = changed.slice(-8).reverse().map(function (r) {
-      return '<a class="delta-card" href="live.html">'
+      return '<a class="delta-card" href="race.html?id=' + esc(r.race_id) + '">'
         + '<div class="dc-race">' + esc(VEN[r.jcd] || r.jcd) + " " + esc(r.rno)
         + 'R <span class="muted">締切 ' + esc(r.deadline || "?") + "</span></div>"
         + '<div class="dc-comment">' + esc(r.delta_comment) + "</div></a>";

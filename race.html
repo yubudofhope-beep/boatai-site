@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="AIボートレース予想 BoatAI — レース詳細。朝予想・直前予測・結果を1画面で。">
+<title>レース詳細 — BoatAI</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="race-body">
+
+<nav class="topnav">
+  <a class="nav-brand" href="index.html">Boat<span>AI</span></a>
+  <div class="nav-links">
+    <a href="index.html">ホーム</a>
+    <a href="live.html">ライブ</a>
+    <a id="nav-daily" href="index.html#reports">予想</a>
+    <a id="nav-results" href="index.html#reports">結果</a>
+  </div>
+</nav>
+
+<main class="race-main">
+
+  <!-- レースヘッダー -->
+  <header id="race-head" class="race-head">
+    <div class="rh-left">
+      <div id="rh-venue" class="rh-venue">読み込み中…</div>
+      <div id="rh-meta" class="rh-meta"></div>
+    </div>
+    <div class="rh-right">
+      <div id="rh-status" class="rh-status"></div>
+      <div id="rh-cd" class="rh-cd" hidden>--:--</div>
+    </div>
+  </header>
+
+  <!-- 場内レースタブ (1R〜12R) -->
+  <div id="race-tabs" class="race-tabs"></div>
+
+  <!-- 結果パネル (結果が出たら表示) -->
+  <section id="result-panel" class="panel result-panel" hidden>
+    <h2 class="panel-h"><span class="ph-dot ph-result"></span>結果</h2>
+    <div id="result-body" class="result-body"></div>
+  </section>
+
+  <!-- 勝率パネル -->
+  <section id="prob-panel" class="panel" hidden>
+    <h2 class="panel-h"><span class="ph-dot ph-prob"></span>AI 1着確率 <span class="h-sub" id="prob-sub"></span></h2>
+    <div id="prob-bars" class="prob-bars"></div>
+    <p id="delta-note" class="delta-note" hidden></p>
+  </section>
+
+  <!-- 展示タイム -->
+  <section id="exh-panel" class="panel" hidden>
+    <h2 class="panel-h"><span class="ph-dot ph-exh"></span>展示タイム</h2>
+    <div id="exh-grid" class="exh-grid"></div>
+  </section>
+
+  <!-- 3連単 TOP10 -->
+  <section id="top10-panel" class="panel" hidden>
+    <h2 class="panel-h"><span class="ph-dot ph-combo"></span>3連単 AI上位10点 <span class="h-sub">的中した組合せは光ります</span></h2>
+    <ol id="top10-list" class="top10-list"></ol>
+  </section>
+
+  <!-- データなしフォールバック -->
+  <section id="nodata" class="panel" hidden>
+    <p class="placeholder" id="nodata-msg"></p>
+  </section>
+
+  <!-- レポートへのリンク -->
+  <section class="panel link-panel">
+    <a id="link-daily" class="mini-cta" hidden>📋 この日の朝予想レポート</a>
+    <a id="link-results" class="mini-cta" hidden>🌙 この日の結果・答え合わせ</a>
+    <a class="mini-cta" href="live.html">⚡ ライブ直前予測</a>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="disclaimer-f">本サイトは機械学習による予想の参考情報です。的中を保証するものではありません。舟券の購入は自己責任でお願いします。<strong>20歳未満の方の舟券購入は法律で禁止されています。</strong></p>
+    <p class="copy">BoatAI — AI Boatrace Prediction</p>
+  </div>
+</footer>
+
+<script src="assets/race.js"></script>
+</body>
+</html>
