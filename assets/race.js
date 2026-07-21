@@ -1,7 +1,10 @@
-/* BoatAI race.html — レース詳細 (予想＋直前＋結果を1画面)
+/* BoatAI race.html — レース詳細 (予測/直前/結果をタブで1画面に統合)
    URL: race.html?id=202607200404  (日付8桁 + 場コード2桁 + R番号2桁)
-   today.json / live/日付.json / hits.json / reports.json を読み統合表示。
-   どのJSONが無くても壊れないようにフォールバックする。 */
+   読み込むJSON:
+     today.json / live/日付.json / hits.json / reports.json (既存・自動生成)
+     data/predict_日付.json / data/result_日付.json
+       (公開済みレポートHTMLから extract_race_data.py が抽出。無くても壊れない)
+*/
 (function () {
   "use strict";
 
@@ -41,19 +44,18 @@
 
   document.title = venueName + " " + rno + "R — BoatAI";
 
-  var state = { today:null, live:null, hits:null, reports:null };
+  var state = { today:null, live:null, hits:null, reports:null, predict:null, result:null };
+  var curView = null;
 
   function showNodata(msg){
     var s=document.getElementById("nodata");
     if(s){s.hidden=false;document.getElementById("nodata-msg").textContent=msg;}
   }
 
-  // ---- ヘッダー & カウントダウン ----
   function deadlineDate(hhmm){
     var mm=/^(\d{1,2}):(\d{2})$/.exec(String(hhmm||"").trim());
     if(!mm)return null;
-    var d=new Date(+date.slice(0,4), +date.slice(4,6)-1, +date.slice(6,8), +mm[1], +mm[2], 0, 0);
-    return d;
+    return new Date(+date.slice(0,4), +date.slice(4,6)-1, +date.slice(6,8), +mm[1], +mm[2], 0, 0);
   }
 
   var cdTimer=null;
@@ -81,13 +83,12 @@
     cdTimer=setInterval(tick,1000);
   }
 
-  // ---- レースタブ (同じ場の1R〜12R) ----
-  function renderTabs(venue){
-    var box=document.getElementById("race-tabs");
+  // ---- レースナビ (同じ場の1R〜12R) ----
+  function renderNav(venue){
+    var box=document.getElementById("race-nav");
     if(!box)return;
     var races=(venue&&venue.races)||[];
     if(!races.length){
-      // today.jsonが無い日でも1-12Rのタブは出す
       var html="";
       for(var i=1;i<=12;i++){
         html+='<a class="rtab'+(i===rno?" on":"")+'" href="race.html?id='+date+jcd+String(i).padStart(2,"0")+'">'+i+"R</a>";
@@ -100,36 +101,117 @@
     }).join("");
   }
 
-  // ---- 結果パネル ----
-  function renderResult(){
-    var hits=state.hits;
-    if(!hits||hits.date!==date)return false;
-    var item=(hits.items||[]).filter(function(i){return i.race_id===id;})[0];
-    if(!item)return false;
-    var sec=document.getElementById("result-panel");
-    var body=document.getElementById("result-body");
-    sec.hidden=false;
-    var lanes=String(item.combo||"").split("-");
-    var comboHtml=lanes.map(function(l){return laneBadge(l);}).join('<span class="combo-dash">›</span>');
-    var hitCls=item.hit?"res-hit":"res-miss";
-    var rankTxt=item.model_rank?("AI予想 "+item.model_rank+"位"):"";
-    body.innerHTML=
-      '<div class="res-flex">'
-      +'<div class="res-combo '+hitCls+'">'+comboHtml+'</div>'
-      +'<div class="res-info">'
-      +'<div class="res-badge '+hitCls+'">'+(item.hit?"🎯 的中！（AI上位20点内）":"不的中")+"</div>"
-      +(item.payout?'<div class="res-pay">3連単 '+Number(item.payout).toLocaleString()+"円</div>":"")
-      +(rankTxt?'<div class="res-rank">'+esc(rankTxt)+"</div>":"")
-      +"</div></div>";
+  // ---- ビュー切替タブ ----
+  function setupTabs(avail, defaultView){
+    var bar=document.getElementById("view-tabs");
+    if(!bar)return;
+    var any = avail.predict||avail.live||avail.result;
+    if(!any){bar.hidden=true;return;}
+    bar.hidden=false;
+    Array.prototype.forEach.call(bar.querySelectorAll(".vtab"),function(btn){
+      var v=btn.getAttribute("data-view");
+      btn.disabled=!avail[v];
+      btn.classList.toggle("off",!avail[v]);
+      btn.onclick=function(){ if(avail[v]) setView(v); };
+    });
+    setView(defaultView);
+  }
+
+  function setView(v){
+    curView=v;
+    ["predict","live","result"].forEach(function(name){
+      var el=document.getElementById("view-"+name);
+      if(el)el.hidden=(name!==v);
+    });
+    var bar=document.getElementById("view-tabs");
+    if(bar){
+      Array.prototype.forEach.call(bar.querySelectorAll(".vtab"),function(btn){
+        btn.classList.toggle("on",btn.getAttribute("data-view")===v);
+      });
+    }
+  }
+
+  // ---- 結果ビュー ----
+  function renderResultView(hitsItem, resultData){
+    var hasAny = !!(hitsItem || resultData);
+    if(!hasAny){
+      document.getElementById("result-nodata").hidden=false;
+      return false;
+    }
+    document.getElementById("result-nodata").hidden=true;
+    var combo = (resultData&&resultData.combo) || (hitsItem&&hitsItem.combo);
+    var amount = (resultData&&resultData.amount) != null ? resultData.amount : (hitsItem&&hitsItem.payout);
+    var modelRank = (resultData&&resultData.model_rank) != null ? resultData.model_rank : (hitsItem&&hitsItem.model_rank);
+    var hit = hitsItem ? !!hitsItem.hit : (modelRank!=null && modelRank<=20);
+
+    if(combo){
+      var sec=document.getElementById("result-panel");
+      var body=document.getElementById("result-body");
+      sec.hidden=false;
+      var lanes=String(combo).split("-");
+      var comboHtml=lanes.map(function(l){return laneBadge(l);}).join('<span class="combo-dash">›</span>');
+      var hitCls=hit?"res-hit":"res-miss";
+      body.innerHTML=
+        '<div class="res-flex">'
+        +'<div class="res-combo '+hitCls+'">'+comboHtml+'</div>'
+        +'<div class="res-info">'
+        +'<div class="res-badge '+hitCls+'">'+(hit?"🎯 的中！（AI上位20点内）":"不的中")+"</div>"
+        +(amount?'<div class="res-pay">3連単 '+Number(amount).toLocaleString()+"円</div>":"")
+        +(resultData&&resultData.kimarite?'<div class="res-rank">決まり手: '+esc(resultData.kimarite)+"</div>":"")
+        +(modelRank?'<div class="res-rank">AI予想 '+modelRank+"位</div>":"")
+        +"</div></div>";
+    }
     var st=document.getElementById("rh-status");
-    if(st)st.innerHTML='<span class="stat-chip '+(item.hit?"stat-hit":"stat-done")+'">'+(item.hit?"的中":"レース終了")+"</span>";
+    if(st)st.innerHTML='<span class="stat-chip '+(hit?"stat-hit":"stat-done")+'">'+(hit?"的中":"レース終了")+"</span>";
     var cd=document.getElementById("rh-cd");
     if(cd)cd.hidden=true;
     if(cdTimer)clearInterval(cdTimer);
+
+    // 着順
+    if(resultData && resultData.finish && resultData.finish.length){
+      var fp=document.getElementById("finish-panel");
+      var fb=document.getElementById("finish-body");
+      fp.hidden=false;
+      fb.innerHTML='<table class="finish-table"><tr><th>着</th><th>艇</th><th>選手</th></tr>'
+        + resultData.finish.map(function(f){
+            return '<tr><td>'+f.pos+"着</td><td>"+laneBadge(f.lane)+"</td><td>"+esc(f.name)+"</td></tr>";
+          }).join("")
+        + "</table>";
+    }
+    // 他券種
+    if(resultData && resultData.others && resultData.others.length){
+      var op=document.getElementById("others-panel");
+      var ob=document.getElementById("others-body");
+      op.hidden=false;
+      ob.innerHTML=resultData.others.map(function(o){
+        return '<div class="oth-item">'+esc(o)+"</div>";
+      }).join("");
+    }
     return true;
   }
 
-  // ---- 勝率バー (朝 vs 直前) ----
+  function renderResultTop20(predictData, resultCombo){
+    var top=(predictData&&predictData.top20)||[];
+    if(!top.length)return;
+    var sec=document.getElementById("result-top20-panel");
+    var ol=document.getElementById("result-top20-list");
+    sec.hidden=false;
+    var maxP=top[0]&&top[0].prob||1;
+    ol.innerHTML=top.map(function(t){
+      var isHit=resultCombo&&t.combo===resultCombo;
+      var lanes=String(t.combo).split("-");
+      return '<li class="t10'+(isHit?" t10-hit":"")+'">'
+        +'<span class="t10-rank">'+t.no+"</span>"
+        +'<span class="t10-combo">'+lanes.map(laneBadge).join("-")+"</span>"
+        +'<span class="t10-bar"><span style="width:'+Math.min(100,(t.prob/maxP)*100)+'%"></span></span>'
+        +'<span class="t10-prob">'+pct(t.prob)+"</span>"
+        +(t.odds?'<span class="t10-odds">'+t.odds+"倍</span>":"")
+        +(isHit?'<span class="t10-hitmark">🎯 的中</span>':"")
+        +"</li>";
+    }).join("");
+  }
+
+  // ---- 直前ビュー ----
   function renderProbs(liveRace,todayRace){
     var sec=document.getElementById("prob-panel");
     var box=document.getElementById("prob-bars");
@@ -137,14 +219,12 @@
     var wp=liveRace&&liveRace.win_prob;
     var mp=(liveRace&&liveRace.morning_win_prob)||null;
     if(!wp&&!mp){
-      // liveが無い→today.jsonの本命だけでも
       if(!todayRace)return false;
       sec.hidden=false;
       sub.textContent="(朝モデル・本命のみ)";
       box.innerHTML='<div class="prob-row"><div class="pr-lane">'+laneBadge(todayRace.honmei_lane)
         +'</div><div class="pr-track"><div class="pr-fill" style="width:'+(todayRace.honmei_prob*100)
-        +'%"></div></div><div class="pr-val">'+pct(todayRace.honmei_prob)+"</div></div>"
-        +'<p class="note">展示航走後にここが6艇分の直前予測へ更新されます。</p>';
+        +'%"></div></div><div class="pr-val">'+pct(todayRace.honmei_prob)+"</div></div>";
       return true;
     }
     sec.hidden=false;
@@ -177,11 +257,10 @@
     return true;
   }
 
-  // ---- 展示タイム ----
   function renderExh(liveRace){
     var ex=liveRace&&liveRace.exhibition;
-    if(!ex)return;
     var sec=document.getElementById("exh-panel");
+    if(!ex){return false;}
     var box=document.getElementById("exh-grid");
     sec.hidden=false;
     var vals=[1,2,3,4,5,6].map(function(l){return +ex[l]||99;});
@@ -193,26 +272,79 @@
         +'<div class="exh-t">'+(t!=null?Number(t).toFixed(2):"-")+"</div>"
         +(isBest?'<div class="exh-best">展示1位</div>':"")+"</div>";
     }).join("");
+    return true;
   }
 
-  // ---- 3連単TOP10 ----
-  function renderTop10(liveRace,resultCombo){
+  function renderTop10Live(liveRace){
     var top=(liveRace&&liveRace.top10)||[];
-    if(!top.length)return;
     var sec=document.getElementById("top10-panel");
+    if(!top.length)return false;
     var ol=document.getElementById("top10-list");
     sec.hidden=false;
     ol.innerHTML=top.map(function(t,i){
-      var isHit=resultCombo&&t.combo===resultCombo;
       var lanes=String(t.combo).split("-");
-      return '<li class="t10'+(isHit?" t10-hit":"")+'">'
+      return '<li class="t10">'
         +'<span class="t10-rank">'+(i+1)+"</span>"
         +'<span class="t10-combo">'+lanes.map(laneBadge).join("-")+"</span>"
-        +'<span class="t10-bar"><span style="width:'+Math.min(100,t.prob*100/(top[0].prob||1)*1)+'%"></span></span>'
-        +'<span class="t10-prob">'+pct(t.prob)+"</span>"
-        +(isHit?'<span class="t10-hitmark">🎯 的中</span>':"")
-        +"</li>";
+        +'<span class="t10-bar"><span style="width:'+Math.min(100,t.prob*100/((top[0]&&top[0].prob)||1)*1)+'%"></span></span>'
+        +'<span class="t10-prob">'+pct(t.prob)+"</span></li>";
     }).join("");
+    return true;
+  }
+
+  function renderLiveView(liveRace, todayRace){
+    var hasProb=renderProbs(liveRace,todayRace);
+    var hasExh=renderExh(liveRace);
+    var hasTop=renderTop10Live(liveRace);
+    document.getElementById("live-nodata").hidden = !!(hasProb||hasExh||hasTop);
+    return hasProb||hasExh||hasTop;
+  }
+
+  // ---- 予測ビュー (朝モデル・全艇) ----
+  function renderPredictView(predictData){
+    if(!predictData || !predictData.lanes || !predictData.lanes.length){
+      document.getElementById("pred-nodata").hidden=false;
+      return false;
+    }
+    document.getElementById("pred-nodata").hidden=true;
+    var sec=document.getElementById("pred-prob-panel");
+    var grid=document.getElementById("pred-prob-grid");
+    sec.hidden=false;
+    var lanes=predictData.lanes.slice().sort(function(a,b){return b.p_win-a.p_win;});
+    grid.innerHTML=lanes.map(function(l){
+      return '<div class="ppr-row">'
+        +'<div class="ppr-lane">'+laneBadge(l.lane)+"</div>"
+        +'<div class="ppr-bars">'
+        +'<div class="ppr-line"><span class="ppr-tag">1着</span>'
+        +'<div class="pr-track"><div class="pr-fill pr-l'+l.lane+'" style="width:'+(l.p_win*100)+'%"></div></div>'
+        +'<span class="ppr-val">'+pct(l.p_win)+"</span></div>"
+        +'<div class="ppr-line"><span class="ppr-tag">2連対</span>'
+        +'<div class="pr-track"><div class="pr-fill pr-l'+l.lane+'" style="width:'+(l.p_top2*100)+';opacity:.7"></div></div>'
+        +'<span class="ppr-val">'+pct(l.p_top2)+"</span></div>"
+        +'<div class="ppr-line"><span class="ppr-tag">3連対</span>'
+        +'<div class="pr-track"><div class="pr-fill pr-l'+l.lane+'" style="width:'+(l.p_top3*100)+';opacity:.45"></div></div>'
+        +'<span class="ppr-val">'+pct(l.p_top3)+"</span></div>"
+        +"</div></div>";
+    }).join("");
+
+    var top=predictData.top20||[];
+    if(top.length){
+      var tp=document.getElementById("pred-top20-panel");
+      var ol=document.getElementById("pred-top20-list");
+      tp.hidden=false;
+      var maxP=top[0].prob||1;
+      ol.innerHTML=top.map(function(t){
+        var lanes2=String(t.combo).split("-");
+        return '<li class="t10">'
+          +'<span class="t10-rank">'+t.no+"</span>"
+          +'<span class="t10-combo">'+lanes2.map(laneBadge).join("-")+"</span>"
+          +'<span class="t10-bar"><span style="width:'+Math.min(100,(t.prob/maxP)*100)+'%"></span></span>'
+          +'<span class="t10-prob">'+pct(t.prob)+"</span>"
+          +(t.odds?'<span class="t10-odds">'+t.odds+"倍</span>":"")
+          +"</li>";
+      }).join("");
+    }
+    return true;
   }
 
   // ---- メイン ----
@@ -220,11 +352,13 @@
     loadJson("today.json"),
     loadJson("live/"+date+".json"),
     loadJson("hits.json"),
-    loadJson("reports.json")
+    loadJson("reports.json"),
+    loadJson("data/predict_"+date+".json"),
+    loadJson("data/result_"+date+".json")
   ]).then(function(res){
-    state.today=res[0];state.live=res[1];state.hits=res[2];state.reports=res[3];
+    state.today=res[0];state.live=res[1];state.hits=res[2];
+    state.reports=res[3];state.predict=res[4];state.result=res[5];
 
-    // today.json は当日のみ有効
     var venue=null,todayRace=null;
     if(state.today&&state.today.date===date){
       venue=(state.today.venues||[]).filter(function(v){return v.jcd===jcd;})[0];
@@ -234,40 +368,53 @@
     if(state.live&&state.live.date===date){
       liveRace=(state.live.races||[]).filter(function(r){return r.race_id===id;})[0];
     }
+    var predictRace = state.predict && state.predict.date===date
+      ? (state.predict.races||{})[id] : null;
+    var resultRace = state.result && state.result.date===date
+      ? (state.result.races||{})[id] : null;
+    var hitsItem = state.hits && state.hits.date===date
+      ? (state.hits.items||[]).filter(function(i){return i.race_id===id;})[0] : null;
 
     // ヘッダー
     document.getElementById("rh-venue").innerHTML=
       esc(venueName)+' <span class="rh-rno">'+rno+"R</span>";
     var meta=fmtDate(date);
-    var dlStr=(todayRace&&todayRace.deadline)||(liveRace&&liveRace.deadline)||null;
+    var dlStr=(todayRace&&todayRace.deadline)||(liveRace&&liveRace.deadline)||(predictRace&&predictRace.deadline)||null;
     if(dlStr)meta+="　締切 "+dlStr;
-    if(todayRace&&todayRace.flag)meta+="　"+(FLAG_LABEL[todayRace.flag]||todayRace.flag);
+    var flagVal=(todayRace&&todayRace.flag)||(predictRace&&predictRace.flag);
+    if(flagVal)meta+="　"+(FLAG_LABEL[flagVal]||flagVal);
     document.getElementById("rh-meta").textContent=meta;
 
-    renderTabs(venue);
+    renderNav(venue);
 
-    // 結果
-    var hasResult=renderResult();
-    var resultCombo=null;
-    if(hasResult){
-      var it=(state.hits.items||[]).filter(function(i){return i.race_id===id;})[0];
-      resultCombo=it&&it.combo;
-    }else if(dlStr&&isToday){
-      var dl=deadlineDate(dlStr);
-      if(dl&&dl>new Date())startCountdown(dl);
-      else document.getElementById("rh-status").innerHTML='<span class="stat-chip stat-wait">結果待ち</span>';
-    }else if(!isToday){
-      document.getElementById("rh-status").innerHTML='<span class="stat-chip stat-done">開催終了</span>';
+    var hasResult = !!(hitsItem || resultRace);
+    var resultCombo = (resultRace&&resultRace.combo) || (hitsItem&&hitsItem.combo) || null;
+
+    // 各ビューを描画 (中身があるかどうかに関わらず一旦全部描く。表示はタブで制御)
+    renderResultView(hitsItem, resultRace);
+    renderResultTop20(predictRace, resultCombo);
+    var hasLive = renderLiveView(liveRace, todayRace);
+    var hasPredict = renderPredictView(predictRace);
+
+    // ステータス/カウントダウン (結果が無い場合のみ)
+    if(!hasResult){
+      if(dlStr&&isToday){
+        var dl=deadlineDate(dlStr);
+        if(dl&&dl>new Date())startCountdown(dl);
+        else document.getElementById("rh-status").innerHTML='<span class="stat-chip stat-wait">結果待ち</span>';
+      }else if(!isToday){
+        document.getElementById("rh-status").innerHTML='<span class="stat-chip stat-done">開催終了</span>';
+      }
     }
 
-    // パネル
-    var any=false;
-    if(renderProbs(liveRace,todayRace))any=true;
-    renderExh(liveRace);
-    renderTop10(liveRace,resultCombo);
-    if(!any&&!hasResult){
+    // タブ設定 + 初期表示ビュー
+    var avail={predict:hasPredict, live:hasLive, result:hasResult};
+    var def = hasResult?"result":(hasLive?"live":(hasPredict?"predict":"result"));
+    setupTabs(avail, def);
+
+    if(!hasPredict&&!hasLive&&!hasResult){
       showNodata(isToday
-        ?"このレースの予測データはまだありません。朝7時のレポート生成後に表示されます。"
+        ?"このレースのデータはまだありません。朝7時のレポート生成後に表示されます。"
         :"この日のレースデータが見つかりません。下のレポートリンクから確認してください。");
     }
 
@@ -282,7 +429,7 @@
       lr.hidden=false;lr.href="results/results_report_"+date+".html";
     }
 
-    // 当日は1分ごとにlive/hitsを再取得
+    // 当日・結果未確定なら1分ごとにlive/hitsを再取得 (predict/resultは日次生成なので対象外)
     if(isToday&&!hasResult){
       setInterval(function(){
         Promise.all([loadJson("live/"+date+".json"),loadJson("hits.json")]).then(function(r2){
@@ -291,15 +438,16 @@
           if(state.live&&state.live.date===date){
             lv=(state.live.races||[]).filter(function(r){return r.race_id===id;})[0];
           }
-          var hr=renderResult();
-          var rc=null;
-          if(hr){
-            var it2=(state.hits.items||[]).filter(function(i){return i.race_id===id;})[0];
-            rc=it2&&it2.combo;
+          var hi = state.hits && state.hits.date===date
+            ? (state.hits.items||[]).filter(function(i){return i.race_id===id;})[0] : null;
+          var nowHasResult = !!hi;
+          if(nowHasResult){
+            renderResultView(hi, null);
+            renderResultTop20(predictRace, hi.combo);
+            setupTabs({predict:hasPredict,live:hasLive,result:true},"result");
+          }else{
+            renderLiveView(lv, todayRace);
           }
-          renderProbs(lv,todayRace);
-          renderExh(lv);
-          renderTop10(lv,rc);
         });
       },60000);
     }

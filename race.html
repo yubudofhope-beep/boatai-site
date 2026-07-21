@@ -33,44 +33,84 @@
     </div>
   </header>
 
-  <!-- 場内レースタブ (1R〜12R) -->
-  <div id="race-tabs" class="race-tabs"></div>
+  <!-- 場内レースナビ (1R〜12R) -->
+  <div id="race-nav" class="race-tabs"></div>
 
-  <!-- 結果パネル (結果が出たら表示) -->
-  <section id="result-panel" class="panel result-panel" hidden>
-    <h2 class="panel-h"><span class="ph-dot ph-result"></span>結果</h2>
-    <div id="result-body" class="result-body"></div>
-  </section>
+  <!-- ビュー切替タブ: 予測(朝) / 直前 / 結果 -->
+  <div id="view-tabs" class="view-tabs" hidden>
+    <button class="vtab" data-view="predict">📋 朝の予測</button>
+    <button class="vtab" data-view="live">⚡ 直前情報</button>
+    <button class="vtab" data-view="result">🏁 結果</button>
+  </div>
 
-  <!-- 勝率パネル -->
-  <section id="prob-panel" class="panel" hidden>
-    <h2 class="panel-h"><span class="ph-dot ph-prob"></span>AI 1着確率 <span class="h-sub" id="prob-sub"></span></h2>
-    <div id="prob-bars" class="prob-bars"></div>
-    <p id="delta-note" class="delta-note" hidden></p>
-  </section>
+  <!-- ===== 結果ビュー ===== -->
+  <div id="view-result" class="view-body" hidden>
+    <section id="result-panel" class="panel result-panel" hidden>
+      <h2 class="panel-h"><span class="ph-dot ph-result"></span>結果</h2>
+      <div id="result-body" class="result-body"></div>
+    </section>
+    <section id="finish-panel" class="panel" hidden>
+      <h2 class="panel-h"><span class="ph-dot ph-result"></span>着順</h2>
+      <div id="finish-body" class="finish-body"></div>
+    </section>
+    <section id="others-panel" class="panel" hidden>
+      <h2 class="panel-h"><span class="ph-dot ph-result"></span>他券種の払戻</h2>
+      <div id="others-body" class="others-body"></div>
+    </section>
+    <section id="result-top20-panel" class="panel" hidden>
+      <h2 class="panel-h"><span class="ph-dot ph-combo"></span>3連単 AI上位20点 <span class="h-sub">的中組合せが光ります</span></h2>
+      <ol id="result-top20-list" class="top10-list"></ol>
+    </section>
+    <section id="result-nodata" class="panel" hidden>
+      <p class="placeholder">まだ結果が出ていません。締切後にここへ表示されます。</p>
+    </section>
+  </div>
 
-  <!-- 展示タイム -->
-  <section id="exh-panel" class="panel" hidden>
-    <h2 class="panel-h"><span class="ph-dot ph-exh"></span>展示タイム</h2>
-    <div id="exh-grid" class="exh-grid"></div>
-  </section>
+  <!-- ===== 直前ビュー ===== -->
+  <div id="view-live" class="view-body" hidden>
+    <section id="prob-panel" class="panel" hidden>
+      <h2 class="panel-h"><span class="ph-dot ph-prob"></span>AI 1着確率 <span class="h-sub" id="prob-sub"></span></h2>
+      <div id="prob-bars" class="prob-bars"></div>
+      <p id="delta-note" class="delta-note" hidden></p>
+    </section>
+    <section id="exh-panel" class="panel" hidden>
+      <h2 class="panel-h"><span class="ph-dot ph-exh"></span>展示タイム</h2>
+      <div id="exh-grid" class="exh-grid"></div>
+    </section>
+    <section id="top10-panel" class="panel" hidden>
+      <h2 class="panel-h"><span class="ph-dot ph-combo"></span>3連単 AI上位10点(直前) <span class="h-sub">展示後の更新値</span></h2>
+      <ol id="top10-list" class="top10-list"></ol>
+    </section>
+    <section id="live-nodata" class="panel" hidden>
+      <p class="placeholder">直前情報はまだありません。締切約10分前に展示・周回展示を反映して更新されます。</p>
+    </section>
+  </div>
 
-  <!-- 3連単 TOP10 -->
-  <section id="top10-panel" class="panel" hidden>
-    <h2 class="panel-h"><span class="ph-dot ph-combo"></span>3連単 AI上位10点 <span class="h-sub">的中した組合せは光ります</span></h2>
-    <ol id="top10-list" class="top10-list"></ol>
-  </section>
+  <!-- ===== 予測ビュー (朝モデル) ===== -->
+  <div id="view-predict" class="view-body" hidden>
+    <section id="pred-prob-panel" class="panel" hidden>
+      <h2 class="panel-h"><span class="ph-dot ph-prob"></span>AI 1着 / 2連対 / 3連対率 <span class="h-sub">朝モデル・全艇</span></h2>
+      <div id="pred-prob-grid" class="pred-prob-grid"></div>
+    </section>
+    <section id="pred-top20-panel" class="panel" hidden>
+      <h2 class="panel-h"><span class="ph-dot ph-combo"></span>3連単 AI上位20点(朝) <span class="h-sub">確率が高い順</span></h2>
+      <ol id="pred-top20-list" class="top10-list"></ol>
+    </section>
+    <section id="pred-nodata" class="panel" hidden>
+      <p class="placeholder">朝の予測データはまだありません。朝7時のレポート生成後に表示されます。</p>
+    </section>
+  </div>
 
-  <!-- データなしフォールバック -->
+  <!-- どのビューも出せない場合の最終フォールバック -->
   <section id="nodata" class="panel" hidden>
     <p class="placeholder" id="nodata-msg"></p>
   </section>
 
   <!-- レポートへのリンク -->
   <section class="panel link-panel">
-    <a id="link-daily" class="mini-cta" hidden>📋 この日の朝予想レポート</a>
-    <a id="link-results" class="mini-cta" hidden>🌙 この日の結果・答え合わせ</a>
-    <a class="mini-cta" href="live.html">⚡ ライブ直前予測</a>
+    <a id="link-daily" class="mini-cta" hidden>📋 この日の朝予想レポート(全レース)</a>
+    <a id="link-results" class="mini-cta" hidden>🌙 この日の結果・答え合わせ(全レース)</a>
+    <a class="mini-cta" href="live.html">⚡ ライブ直前予測(全場)</a>
   </section>
 
 </main>

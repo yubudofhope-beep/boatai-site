@@ -255,6 +255,44 @@ main{max-width:960px;margin:0 auto;padding:8px 16px 40px;}
 .rtab.on{color:#03121c;background:linear-gradient(135deg,var(--accent),var(--accent2));
   border-color:transparent;box-shadow:0 0 14px rgba(0,229,255,.45);}
 
+/* ビュー切替タブ (予測/直前/結果) */
+.view-tabs{display:flex;gap:8px;margin:14px 0 4px;flex-wrap:wrap;}
+.vtab{flex:1;min-width:110px;padding:10px 14px;border-radius:12px;font-size:14px;font-weight:bold;
+  color:var(--muted);background:var(--card2);border:1px solid var(--border);cursor:pointer;
+  transition:all .15s;}
+.vtab:hover:not(:disabled){color:var(--accent);border-color:var(--border2);}
+.vtab.on{color:#03121c;background:linear-gradient(135deg,var(--accent),var(--accent2));
+  border-color:transparent;box-shadow:0 0 16px rgba(0,229,255,.4);}
+.vtab.off{opacity:.35;cursor:not-allowed;}
+.view-body{animation:fadein .2s ease;}
+@keyframes fadein{from{opacity:0;}to{opacity:1;}}
+
+/* 着順テーブル */
+.finish-table{width:100%;border-collapse:collapse;}
+.finish-table th,.finish-table td{padding:8px 6px;text-align:left;font-size:13px;
+  border-bottom:1px solid var(--border);}
+.finish-table th{color:var(--muted);font-weight:normal;font-size:11px;}
+
+/* 他券種 */
+.others-body{display:flex;flex-direction:column;gap:4px;}
+.oth-item{font-size:12px;color:var(--muted);padding:4px 8px;border-radius:6px;
+  background:var(--card2);}
+
+/* t10リストの拡張 (odds) */
+.t10-odds{flex:none;font-size:11px;color:var(--gold);font-weight:bold;}
+
+/* 予測ビュー: 全艇1/2/3連対率 */
+.pred-prob-grid{display:flex;flex-direction:column;gap:14px;}
+.ppr-row{display:flex;gap:12px;align-items:flex-start;padding:8px 0;
+  border-bottom:1px solid var(--border);}
+.ppr-row:last-child{border-bottom:none;}
+.ppr-lane{flex:none;padding-top:2px;}
+.ppr-bars{flex:1;display:flex;flex-direction:column;gap:5px;}
+.ppr-line{display:flex;align-items:center;gap:8px;}
+.ppr-tag{flex:none;width:44px;font-size:11px;color:var(--muted);}
+.ppr-val{flex:none;width:52px;text-align:right;font-size:12px;font-weight:bold;
+  font-variant-numeric:tabular-nums;}
+
 /* パネル共通 */
 .panel{margin:14px 0;padding:16px 18px;border-radius:16px;
   background:var(--card);border:1px solid var(--border);backdrop-filter:blur(8px);}
