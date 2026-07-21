@@ -212,7 +212,7 @@
   }
 
   // ---- 直前ビュー ----
-  function renderProbs(liveRace,todayRace){
+  function renderProbs(liveRace,todayRace,winnerLane){
     var sec=document.getElementById("prob-panel");
     var box=document.getElementById("prob-bars");
     var sub=document.getElementById("prob-sub");
@@ -242,12 +242,14 @@
             +(diff>0?"▲":"▼")+(Math.abs(diff)*100).toFixed(1)+"</span>";
         }
       }
-      return '<div class="prob-row">'
+      var isWinner = winnerLane!=null && +winnerLane===l;
+      return '<div class="prob-row'+(isWinner?" prob-winner":"")+'">'
         +'<div class="pr-lane">'+laneBadge(l)+"</div>"
         +'<div class="pr-track">'
         +(mp&&wp?'<div class="pr-ghost" style="width:'+(mParam*100)+'%"></div>':"")
         +'<div class="pr-fill pr-l'+l+'" style="width:'+(p*100)+'%"></div></div>'
-        +'<div class="pr-val">'+pct(p)+diffHtml+"</div></div>";
+        +'<div class="pr-val">'+pct(p)+diffHtml+"</div>"
+        +(isWinner?'<span class="pr-won">🏆 1着</span>':"")+"</div>";
     }).join("");
     if(liveRace&&liveRace.delta_comment){
       var dn=document.getElementById("delta-note");
@@ -275,27 +277,44 @@
     return true;
   }
 
-  function renderTop10Live(liveRace){
+  function renderTop10Live(liveRace,resultCombo){
     var top=(liveRace&&liveRace.top10)||[];
     var sec=document.getElementById("top10-panel");
+    var h2=sec&&sec.querySelector(".panel-h");
     if(!top.length)return false;
     var ol=document.getElementById("top10-list");
     sec.hidden=false;
+    var hitRank=null;
+    var maxP=(top[0]&&top[0].prob)||1;
     ol.innerHTML=top.map(function(t,i){
       var lanes=String(t.combo).split("-");
-      return '<li class="t10">'
+      var isHit = resultCombo && t.combo===resultCombo;
+      if(isHit)hitRank=i+1;
+      return '<li class="t10'+(isHit?" t10-hit":"")+'">'
         +'<span class="t10-rank">'+(i+1)+"</span>"
         +'<span class="t10-combo">'+lanes.map(laneBadge).join("-")+"</span>"
-        +'<span class="t10-bar"><span style="width:'+Math.min(100,t.prob*100/((top[0]&&top[0].prob)||1)*1)+'%"></span></span>'
-        +'<span class="t10-prob">'+pct(t.prob)+"</span></li>";
+        +'<span class="t10-bar"><span style="width:'+Math.min(100,(t.prob/maxP)*100)+'%"></span></span>'
+        +'<span class="t10-prob">'+pct(t.prob)+"</span>"
+        +(isHit?'<span class="t10-hitmark">🎯 的中</span>':"")
+        +"</li>";
     }).join("");
+    if(h2){
+      var badge=h2.querySelector(".live-hit-badge");
+      if(badge)badge.remove();
+      if(resultCombo){
+        var span=document.createElement("span");
+        span.className="live-hit-badge "+(hitRank?"hit":"miss");
+        span.textContent=hitRank?("🎯 直前10点の"+hitRank+"位で的中！"):"直前10点は外れ(結果は圏外)";
+        h2.appendChild(span);
+      }
+    }
     return true;
   }
 
-  function renderLiveView(liveRace, todayRace){
-    var hasProb=renderProbs(liveRace,todayRace);
+  function renderLiveView(liveRace, todayRace, resultCombo, winnerLane){
+    var hasProb=renderProbs(liveRace,todayRace,winnerLane);
     var hasExh=renderExh(liveRace);
-    var hasTop=renderTop10Live(liveRace);
+    var hasTop=renderTop10Live(liveRace,resultCombo);
     document.getElementById("live-nodata").hidden = !!(hasProb||hasExh||hasTop);
     return hasProb||hasExh||hasTop;
   }
@@ -389,11 +408,13 @@
 
     var hasResult = !!(hitsItem || resultRace);
     var resultCombo = (resultRace&&resultRace.combo) || (hitsItem&&hitsItem.combo) || null;
+    var winnerLane = (resultRace&&resultRace.finish&&(resultRace.finish.filter(function(f){return f.pos===1;})[0]||{}).lane)
+      || (resultCombo?+String(resultCombo).split("-")[0]:null);
 
     // 各ビューを描画 (中身があるかどうかに関わらず一旦全部描く。表示はタブで制御)
     renderResultView(hitsItem, resultRace);
     renderResultTop20(predictRace, resultCombo);
-    var hasLive = renderLiveView(liveRace, todayRace);
+    var hasLive = renderLiveView(liveRace, todayRace, resultCombo, winnerLane);
     var hasPredict = renderPredictView(predictRace);
 
     // ステータス/カウントダウン (結果が無い場合のみ)
@@ -442,11 +463,13 @@
             ? (state.hits.items||[]).filter(function(i){return i.race_id===id;})[0] : null;
           var nowHasResult = !!hi;
           if(nowHasResult){
+            var wLane=+String(hi.combo).split("-")[0];
             renderResultView(hi, null);
             renderResultTop20(predictRace, hi.combo);
+            renderLiveView(lv, todayRace, hi.combo, wLane);
             setupTabs({predict:hasPredict,live:hasLive,result:true},"result");
           }else{
-            renderLiveView(lv, todayRace);
+            renderLiveView(lv, todayRace, null, null);
           }
         });
       },60000);

@@ -339,6 +339,16 @@ main{max-width:960px;margin:0 auto;padding:8px 16px 40px;}
   font-variant-numeric:tabular-nums;font-size:14px;}
 .pr-diff{font-size:11px;margin-left:4px;font-weight:bold;}
 .pr-diff.up{color:var(--hit);} .pr-diff.down{color:var(--miss);}
+.prob-row.prob-winner{background:rgba(0,230,118,.07);border-radius:8px;
+  box-shadow:0 0 0 1px rgba(0,230,118,.35) inset;}
+.pr-won{flex:none;font-size:11px;font-weight:900;color:var(--hit);margin-left:6px;
+  text-shadow:0 0 8px rgba(0,230,118,.5);}
+.live-hit-badge{font-size:11px;font-weight:bold;padding:2px 10px;border-radius:999px;
+  margin-left:auto;}
+.live-hit-badge.hit{background:rgba(0,230,118,.15);color:var(--hit);
+  border:1px solid rgba(0,230,118,.5);}
+.live-hit-badge.miss{background:rgba(139,152,173,.12);color:var(--muted);
+  border:1px solid var(--border);}
 .delta-note{margin:10px 0 0;font-size:13px;color:var(--gold);
   background:rgba(255,215,64,.07);border:1px solid rgba(255,215,64,.25);
   border-radius:10px;padding:8px 12px;}
