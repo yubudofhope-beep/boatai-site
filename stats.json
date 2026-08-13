@@ -659,5 +659,24 @@
   "roi_top10": null,
   "roi_top20": null,
   "best_amount": 110480
+ },
+ {
+  "date": "20260814",
+  "n_races": 192,
+  "n_result": 1,
+  "n_judged": 1,
+  "top10_hits": 1,
+  "top10_rate": 100,
+  "top20_hits": 1,
+  "top20_rate": 100,
+  "win_hits": 1,
+  "win_rate": 100,
+  "tan_hits": 1,
+  "pnl": 300,
+  "ret": 400,
+  "cost": 100,
+  "roi_top10": -600,
+  "roi_top20": -1600,
+  "best_amount": 400
  }
 ]
