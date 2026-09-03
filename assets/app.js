@@ -350,6 +350,36 @@
     drawChart(canvas, fb, valid);
   }
 
+  // ---------- 検証中の固定買い目実績（会場・印順は公開しない） ----------
+  function renderMarkBetsStats(stats) {
+    var cardsEl = document.getElementById("mark-bets-stats-cards");
+    if (!cardsEl) return;
+    var valid = (stats || []).filter(function (s) {
+      return s && s.date && Number.isFinite(Number(s.points)) &&
+        Number.isFinite(Number(s.hits)) && Number.isFinite(Number(s.invest_yen)) &&
+        Number.isFinite(Number(s.return_yen));
+    });
+    if (!valid.length) {
+      cardsEl.innerHTML = '<p class="placeholder">実績データはまだありません。結果確定後に更新されます。</p>';
+      return;
+    }
+    valid.sort(function (a, b) { return String(a.date).localeCompare(String(b.date)); });
+    var startDate = valid[0].date;
+    var hits = 0, invest = 0, returned = 0;
+    valid.forEach(function (s) {
+      hits += Number(s.hits);
+      invest += Number(s.invest_yen);
+      returned += Number(s.return_yen);
+    });
+    var roi = invest ? returned / invest * 100 : 0;
+    cardsEl.innerHTML =
+      card("開始日", fmtDate(startDate)) +
+      card("的中数", hits.toLocaleString() + "本") +
+      card("総投資額", invest.toLocaleString() + "円") +
+      card("総回収額", returned.toLocaleString() + "円") +
+      card("回収率", roi.toFixed(1) + "%", roi >= 100 ? "plus" : "minus");
+  }
+
   function drawChart(canvas, fb, valid) {
     if (!canvas) return;
     if (typeof Chart === "undefined") { // CDN読み込み失敗でも壊さない
@@ -424,6 +454,12 @@
     loadJson("stats.json").then(function (d) {
       try { renderStats(d); } catch (e) {
         var el = document.getElementById("stats-cards");
+        if (el) el.innerHTML = '<p class="placeholder">実績データを読み込めませんでした</p>';
+      }
+    });
+    loadJson("mark_bets_stats.json").then(function (d) {
+      try { renderMarkBetsStats(d); } catch (e) {
+        var el = document.getElementById("mark-bets-stats-cards");
         if (el) el.innerHTML = '<p class="placeholder">実績データを読み込めませんでした</p>';
       }
     });
