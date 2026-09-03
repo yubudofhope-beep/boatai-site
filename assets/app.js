@@ -353,6 +353,8 @@
   // ---------- 検証中の固定買い目実績（会場・印順は公開しない） ----------
   function renderMarkBetsStats(stats) {
     var cardsEl = document.getElementById("mark-bets-stats-cards");
+    var fb = document.getElementById("mark-bets-chart-fallback");
+    var canvas = document.getElementById("mark-bets-stats-chart");
     if (!cardsEl) return;
     var valid = (stats || []).filter(function (s) {
       return s && s.date && Number.isFinite(Number(s.points)) &&
@@ -361,6 +363,8 @@
     });
     if (!valid.length) {
       cardsEl.innerHTML = '<p class="placeholder">実績データはまだありません。結果確定後に更新されます。</p>';
+      if (fb) fb.hidden = false;
+      if (canvas) canvas.style.display = "none";
       return;
     }
     valid.sort(function (a, b) { return String(a.date).localeCompare(String(b.date)); });
@@ -378,6 +382,49 @@
       card("総投資額", invest.toLocaleString() + "円") +
       card("総回収額", returned.toLocaleString() + "円") +
       card("回収率", roi.toFixed(1) + "%", roi >= 100 ? "plus" : "minus");
+    drawMarkBetsChart(canvas, fb, valid);
+  }
+
+  function drawMarkBetsChart(canvas, fb, valid) {
+    if (!canvas) return;
+    if (typeof Chart === "undefined") {
+      canvas.style.display = "none";
+      if (fb) {
+        fb.hidden = false;
+        fb.textContent = "グラフを読み込めませんでした（実績カードは上に表示中）";
+      }
+      return;
+    }
+    var labels = valid.map(function (s) { return fmtDate(s.date).slice(5); });
+    var cumPnl = 0;
+    var dailyRate = valid.map(function (s) {
+      return Number(s.points) ? Number(s.hits) / Number(s.points) * 100 : 0;
+    });
+    var cumulative = valid.map(function (s) {
+      cumPnl += Number(s.return_yen) - Number(s.invest_yen);
+      return cumPnl;
+    });
+    new Chart(canvas, {
+      data: {
+        labels: labels,
+        datasets: [
+          { type: "bar", label: "日別的中率(%)", data: dailyRate,
+            backgroundColor: "rgba(41,182,246,.55)", yAxisID: "y" },
+          { type: "line", label: "累計収支(円)", data: cumulative,
+            borderColor: "#fdd835", backgroundColor: "#fdd835",
+            tension: .25, yAxisID: "y2" }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { labels: { color: "#e5e9f0" } } },
+        scales: {
+          x: { ticks: { color: "#9aa5b5" }, grid: { color: "#22314a" } },
+          y: { min: 0, max: 100, ticks: { color: "#9aa5b5" }, grid: { color: "#22314a" } },
+          y2: { position: "right", ticks: { color: "#fdd835" }, grid: { drawOnChartArea: false } }
+        }
+      }
+    });
   }
 
   function drawChart(canvas, fb, valid) {
