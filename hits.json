@@ -281,6 +281,15 @@
    "model_rank": 5
   },
   {
+   "race_id": "202609130809",
+   "venue": "常滑",
+   "rno": 9,
+   "combo": "1-2-5",
+   "payout": 670,
+   "hit": true,
+   "model_rank": 3
+  },
+  {
    "race_id": "202609130901",
    "venue": "津",
    "rno": 1,
@@ -351,6 +360,15 @@
    "payout": 7520,
    "hit": true,
    "model_rank": 14
+  },
+  {
+   "race_id": "202609130909",
+   "venue": "津",
+   "rno": 9,
+   "combo": "1-5-6",
+   "payout": 5330,
+   "hit": false,
+   "model_rank": 42
   },
   {
    "race_id": "202609131001",
@@ -848,5 +866,5 @@
    "model_rank": 1
   }
  ],
- "updated": "14:40:20"
+ "updated": "14:45:27"
 }
