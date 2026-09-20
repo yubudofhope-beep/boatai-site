@@ -2,6 +2,15 @@
  "date": "20260920",
  "items": [
   {
+   "race_id": "202609200101",
+   "venue": "桐生",
+   "rno": 1,
+   "combo": "2-4-5",
+   "payout": 1120,
+   "hit": true,
+   "model_rank": 9
+  },
+  {
    "race_id": "202609200201",
    "venue": "戸田",
    "rno": 1,
@@ -830,6 +839,15 @@
    "model_rank": 2
   },
   {
+   "race_id": "202609201710",
+   "venue": "宮島",
+   "rno": 10,
+   "combo": "2-3-5",
+   "payout": 1030,
+   "hit": true,
+   "model_rank": 7
+  },
+  {
    "race_id": "202609202301",
    "venue": "唐津",
    "rno": 1,
@@ -938,5 +956,5 @@
    "model_rank": 30
   }
  ],
- "updated": "15:28:51"
+ "updated": "15:32:39"
 }
