@@ -101,6 +101,15 @@
    "model_rank": 22
   },
   {
+   "race_id": "202610050212",
+   "venue": "戸田",
+   "rno": 12,
+   "combo": "1-3-4",
+   "payout": 450,
+   "hit": true,
+   "model_rank": 2
+  },
+  {
    "race_id": "202610050501",
    "venue": "多摩川",
    "rno": 1,
@@ -198,6 +207,15 @@
    "payout": 1830,
    "hit": true,
    "model_rank": 6
+  },
+  {
+   "race_id": "202610050512",
+   "venue": "多摩川",
+   "rno": 12,
+   "combo": "3-1-4",
+   "payout": 6730,
+   "hit": false,
+   "model_rank": 26
   },
   {
    "race_id": "202610050901",
@@ -1001,5 +1019,5 @@
    "model_rank": 5
   }
  ],
- "updated": "16:31:18"
+ "updated": "16:36:20"
 }
