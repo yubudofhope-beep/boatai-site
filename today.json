@@ -1,129 +1,129 @@
 {
- "date": "20261017",
+ "date": "20261018",
  "venues": [
   {
    "jcd": "01",
    "name": "桐生",
    "races": [
     {
-     "race_id": "202610170101",
+     "race_id": "202610180101",
      "rno": 1,
      "deadline": "15:26",
-     "honmei_lane": 1,
-     "honmei_prob": 0.5149,
+     "honmei_lane": 3,
+     "honmei_prob": 0.3385,
      "flag": "mid",
-     "top1_combo": "1-2-5",
-     "top1_prob": 0.098
+     "top1_combo": "3-1-2",
+     "top1_prob": 0.0505
     },
     {
-     "race_id": "202610170102",
+     "race_id": "202610180102",
      "rno": 2,
-     "deadline": "15:57",
+     "deadline": "15:55",
      "honmei_lane": 1,
-     "honmei_prob": 0.434,
+     "honmei_prob": 0.5021,
      "flag": "mid",
-     "top1_combo": "1-4-6",
-     "top1_prob": 0.0451
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.0755
     },
     {
-     "race_id": "202610170103",
+     "race_id": "202610180103",
      "rno": 3,
      "deadline": "16:22",
-     "honmei_lane": 4,
-     "honmei_prob": 0.3009,
+     "honmei_lane": 1,
+     "honmei_prob": 0.3974,
      "flag": "mid",
-     "top1_combo": "3-2-4",
-     "top1_prob": 0.0716
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.064
     },
     {
-     "race_id": "202610170104",
+     "race_id": "202610180104",
      "rno": 4,
      "deadline": "16:48",
-     "honmei_lane": 4,
-     "honmei_prob": 0.477,
+     "honmei_lane": 1,
+     "honmei_prob": 0.4081,
      "flag": "mid",
-     "top1_combo": "4-1-5",
-     "top1_prob": 0.0554
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.0654
     },
     {
-     "race_id": "202610170105",
+     "race_id": "202610180105",
      "rno": 5,
-     "deadline": "17:17",
-     "honmei_lane": 1,
-     "honmei_prob": 0.3563,
+     "deadline": "17:15",
+     "honmei_lane": 2,
+     "honmei_prob": 0.4198,
      "flag": "mid",
-     "top1_combo": "1-2-6",
-     "top1_prob": 0.0391
+     "top1_combo": "2-1-3",
+     "top1_prob": 0.0808
     },
     {
-     "race_id": "202610170106",
+     "race_id": "202610180106",
      "rno": 6,
-     "deadline": "17:48",
+     "deadline": "17:50",
      "honmei_lane": 1,
-     "honmei_prob": 0.6591,
+     "honmei_prob": 0.7433,
      "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.0916
+     "top1_combo": "1-3-4",
+     "top1_prob": 0.1249
     },
     {
-     "race_id": "202610170107",
+     "race_id": "202610180107",
      "rno": 7,
      "deadline": "18:17",
      "honmei_lane": 1,
-     "honmei_prob": 0.4084,
+     "honmei_prob": 0.5144,
      "flag": "mid",
      "top1_combo": "1-3-4",
-     "top1_prob": 0.0824
+     "top1_prob": 0.1038
     },
     {
-     "race_id": "202610170108",
+     "race_id": "202610180108",
      "rno": 8,
-     "deadline": "18:48",
+     "deadline": "18:45",
      "honmei_lane": 1,
-     "honmei_prob": 0.4922,
-     "flag": "mid",
-     "top1_combo": "1-5-2",
-     "top1_prob": 0.0895
-    },
-    {
-     "race_id": "202610170109",
-     "rno": 9,
-     "deadline": "19:16",
-     "honmei_lane": 1,
-     "honmei_prob": 0.4196,
-     "flag": "mid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.0318
-    },
-    {
-     "race_id": "202610170110",
-     "rno": 10,
-     "deadline": "19:48",
-     "honmei_lane": 1,
-     "honmei_prob": 0.4647,
-     "flag": "mid",
-     "top1_combo": "1-4-2",
-     "top1_prob": 0.1128
-    },
-    {
-     "race_id": "202610170111",
-     "rno": 11,
-     "deadline": "20:17",
-     "honmei_lane": 1,
-     "honmei_prob": 0.7186,
+     "honmei_prob": 0.6587,
      "flag": "solid",
-     "top1_combo": "1-5-4",
-     "top1_prob": 0.068
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.0719
     },
     {
-     "race_id": "202610170112",
+     "race_id": "202610180109",
+     "rno": 9,
+     "deadline": "19:17",
+     "honmei_lane": 1,
+     "honmei_prob": 0.5918,
+     "flag": "solid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.0635
+    },
+    {
+     "race_id": "202610180110",
+     "rno": 10,
+     "deadline": "19:47",
+     "honmei_lane": 1,
+     "honmei_prob": 0.5799,
+     "flag": "solid",
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.1013
+    },
+    {
+     "race_id": "202610180111",
+     "rno": 11,
+     "deadline": "20:15",
+     "honmei_lane": 1,
+     "honmei_prob": 0.6706,
+     "flag": "solid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1245
+    },
+    {
+     "race_id": "202610180112",
      "rno": 12,
      "deadline": "20:45",
      "honmei_lane": 1,
-     "honmei_prob": 0.7343,
+     "honmei_prob": 0.787,
      "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.1464
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1444
     }
    ]
   },
@@ -132,124 +132,124 @@
    "name": "戸田",
    "races": [
     {
-     "race_id": "202610170201",
+     "race_id": "202610180201",
      "rno": 1,
      "deadline": "10:47",
      "honmei_lane": 1,
-     "honmei_prob": 0.6679,
-     "flag": "solid",
-     "top1_combo": "1-2-5",
-     "top1_prob": 0.0781
+     "honmei_prob": 0.3444,
+     "flag": "mid",
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.0367
     },
     {
-     "race_id": "202610170202",
+     "race_id": "202610180202",
      "rno": 2,
      "deadline": "11:16",
-     "honmei_lane": 1,
-     "honmei_prob": 0.627,
-     "flag": "solid",
-     "top1_combo": "1-4-6",
-     "top1_prob": 0.0466
+     "honmei_lane": 3,
+     "honmei_prob": 0.3433,
+     "flag": "mid",
+     "top1_combo": "1-3-2",
+     "top1_prob": 0.0558
     },
     {
-     "race_id": "202610170203",
+     "race_id": "202610180203",
      "rno": 3,
      "deadline": "11:45",
      "honmei_lane": 1,
-     "honmei_prob": 0.3487,
+     "honmei_prob": 0.5251,
      "flag": "mid",
      "top1_combo": "1-2-6",
-     "top1_prob": 0.052
+     "top1_prob": 0.0589
     },
     {
-     "race_id": "202610170204",
+     "race_id": "202610180204",
      "rno": 4,
      "deadline": "12:14",
-     "honmei_lane": 2,
-     "honmei_prob": 0.4259,
+     "honmei_lane": 1,
+     "honmei_prob": 0.3123,
      "flag": "mid",
-     "top1_combo": "2-3-4",
-     "top1_prob": 0.0544
+     "top1_combo": "4-1-2",
+     "top1_prob": 0.0452
     },
     {
-     "race_id": "202610170205",
+     "race_id": "202610180205",
      "rno": 5,
      "deadline": "12:44",
-     "honmei_lane": 2,
-     "honmei_prob": 0.4525,
-     "flag": "mid",
-     "top1_combo": "1-2-6",
-     "top1_prob": 0.0397
+     "honmei_lane": 1,
+     "honmei_prob": 0.7474,
+     "flag": "solid",
+     "top1_combo": "1-3-6",
+     "top1_prob": 0.103
     },
     {
-     "race_id": "202610170206",
+     "race_id": "202610180206",
      "rno": 6,
      "deadline": "13:14",
-     "honmei_lane": 1,
-     "honmei_prob": 0.3169,
+     "honmei_lane": 2,
+     "honmei_prob": 0.4509,
      "flag": "mid",
-     "top1_combo": "1-4-5",
-     "top1_prob": 0.0568
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.0891
     },
     {
-     "race_id": "202610170207",
+     "race_id": "202610180207",
      "rno": 7,
      "deadline": "13:44",
-     "honmei_lane": 1,
-     "honmei_prob": 0.6875,
-     "flag": "solid",
-     "top1_combo": "1-4-3",
-     "top1_prob": 0.0921
+     "honmei_lane": 4,
+     "honmei_prob": 0.2994,
+     "flag": "rough",
+     "top1_combo": "4-3-2",
+     "top1_prob": 0.0456
     },
     {
-     "race_id": "202610170208",
+     "race_id": "202610180208",
      "rno": 8,
      "deadline": "14:15",
-     "honmei_lane": 3,
-     "honmei_prob": 0.4554,
+     "honmei_lane": 1,
+     "honmei_prob": 0.3481,
      "flag": "mid",
-     "top1_combo": "1-3-2",
-     "top1_prob": 0.1203
+     "top1_combo": "1-4-3",
+     "top1_prob": 0.0584
     },
     {
-     "race_id": "202610170209",
+     "race_id": "202610180209",
      "rno": 9,
      "deadline": "14:46",
      "honmei_lane": 1,
-     "honmei_prob": 0.5411,
+     "honmei_prob": 0.396,
      "flag": "mid",
-     "top1_combo": "1-5-6",
-     "top1_prob": 0.065
+     "top1_combo": "1-4-2",
+     "top1_prob": 0.0368
     },
     {
-     "race_id": "202610170210",
+     "race_id": "202610180210",
      "rno": 10,
      "deadline": "15:18",
      "honmei_lane": 1,
-     "honmei_prob": 0.4575,
-     "flag": "mid",
-     "top1_combo": "1-3-2",
-     "top1_prob": 0.0658
+     "honmei_prob": 0.6656,
+     "flag": "solid",
+     "top1_combo": "1-4-3",
+     "top1_prob": 0.1393
     },
     {
-     "race_id": "202610170211",
+     "race_id": "202610180211",
      "rno": 11,
      "deadline": "15:51",
      "honmei_lane": 1,
-     "honmei_prob": 0.5526,
+     "honmei_prob": 0.5725,
      "flag": "solid",
-     "top1_combo": "1-3-5",
-     "top1_prob": 0.0518
+     "top1_combo": "1-3-4",
+     "top1_prob": 0.0611
     },
     {
-     "race_id": "202610170212",
+     "race_id": "202610180212",
      "rno": 12,
      "deadline": "16:25",
      "honmei_lane": 1,
-     "honmei_prob": 0.5827,
+     "honmei_prob": 0.6611,
      "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.0956
+     "top1_combo": "1-3-2",
+     "top1_prob": 0.0694
     }
    ]
   },
@@ -258,124 +258,124 @@
    "name": "江戸川",
    "races": [
     {
-     "race_id": "202610170301",
+     "race_id": "202610180301",
      "rno": 1,
      "deadline": "11:14",
      "honmei_lane": 1,
-     "honmei_prob": 0.4494,
+     "honmei_prob": 0.5113,
      "flag": "mid",
-     "top1_combo": "1-4-3",
-     "top1_prob": 0.0384
+     "top1_combo": "1-3-2",
+     "top1_prob": 0.0599
     },
     {
-     "race_id": "202610170302",
+     "race_id": "202610180302",
      "rno": 2,
      "deadline": "11:41",
-     "honmei_lane": 3,
-     "honmei_prob": 0.3326,
+     "honmei_lane": 2,
+     "honmei_prob": 0.3551,
      "flag": "mid",
-     "top1_combo": "3-4-1",
-     "top1_prob": 0.0467
+     "top1_combo": "2-1-3",
+     "top1_prob": 0.0614
     },
     {
-     "race_id": "202610170303",
+     "race_id": "202610180303",
      "rno": 3,
      "deadline": "12:08",
      "honmei_lane": 1,
-     "honmei_prob": 0.4068,
+     "honmei_prob": 0.4303,
      "flag": "mid",
-     "top1_combo": "1-4-6",
-     "top1_prob": 0.0468
+     "top1_combo": "1-3-5",
+     "top1_prob": 0.0714
     },
     {
-     "race_id": "202610170304",
+     "race_id": "202610180304",
      "rno": 4,
      "deadline": "12:35",
      "honmei_lane": 1,
-     "honmei_prob": 0.5919,
-     "flag": "solid",
-     "top1_combo": "1-6-4",
-     "top1_prob": 0.0656
+     "honmei_prob": 0.337,
+     "flag": "mid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.0703
     },
     {
-     "race_id": "202610170305",
+     "race_id": "202610180305",
      "rno": 5,
      "deadline": "13:02",
      "honmei_lane": 1,
-     "honmei_prob": 0.292,
-     "flag": "rough",
-     "top1_combo": "2-1-5",
-     "top1_prob": 0.054
+     "honmei_prob": 0.4666,
+     "flag": "mid",
+     "top1_combo": "1-2-6",
+     "top1_prob": 0.0942
     },
     {
-     "race_id": "202610170306",
+     "race_id": "202610180306",
      "rno": 6,
      "deadline": "13:29",
-     "honmei_lane": 3,
-     "honmei_prob": 0.3327,
-     "flag": "mid",
-     "top1_combo": "3-2-4",
-     "top1_prob": 0.0539
+     "honmei_lane": 1,
+     "honmei_prob": 0.66,
+     "flag": "solid",
+     "top1_combo": "1-2-6",
+     "top1_prob": 0.1276
     },
     {
-     "race_id": "202610170307",
+     "race_id": "202610180307",
      "rno": 7,
      "deadline": "13:56",
-     "honmei_lane": 1,
-     "honmei_prob": 0.4934,
+     "honmei_lane": 2,
+     "honmei_prob": 0.4071,
      "flag": "mid",
-     "top1_combo": "1-5-6",
-     "top1_prob": 0.0744
+     "top1_combo": "2-3-4",
+     "top1_prob": 0.064
     },
     {
-     "race_id": "202610170308",
+     "race_id": "202610180308",
      "rno": 8,
      "deadline": "14:24",
      "honmei_lane": 1,
-     "honmei_prob": 0.5463,
+     "honmei_prob": 0.4989,
      "flag": "mid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.1375
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.084
     },
     {
-     "race_id": "202610170309",
+     "race_id": "202610180309",
      "rno": 9,
      "deadline": "14:52",
      "honmei_lane": 1,
-     "honmei_prob": 0.6586,
+     "honmei_prob": 0.6508,
      "flag": "solid",
-     "top1_combo": "1-2-5",
-     "top1_prob": 0.1222
+     "top1_combo": "1-3-5",
+     "top1_prob": 0.1189
     },
     {
-     "race_id": "202610170310",
+     "race_id": "202610180310",
      "rno": 10,
      "deadline": "15:22",
      "honmei_lane": 1,
-     "honmei_prob": 0.7262,
-     "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.0856
+     "honmei_prob": 0.475,
+     "flag": "mid",
+     "top1_combo": "1-5-3",
+     "top1_prob": 0.0863
     },
     {
-     "race_id": "202610170311",
+     "race_id": "202610180311",
      "rno": 11,
      "deadline": "15:53",
      "honmei_lane": 1,
-     "honmei_prob": 0.4325,
+     "honmei_prob": 0.5201,
      "flag": "mid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.145
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.121
     },
     {
-     "race_id": "202610170312",
+     "race_id": "202610180312",
      "rno": 12,
      "deadline": "16:25",
      "honmei_lane": 1,
-     "honmei_prob": 0.7832,
+     "honmei_prob": 0.7223,
      "flag": "solid",
-     "top1_combo": "1-2-5",
-     "top1_prob": 0.0711
+     "top1_combo": "1-3-6",
+     "top1_prob": 0.061
     }
    ]
   },
@@ -384,124 +384,124 @@
    "name": "平和島",
    "races": [
     {
-     "race_id": "202610170401",
+     "race_id": "202610180401",
      "rno": 1,
      "deadline": "10:30",
      "honmei_lane": 1,
-     "honmei_prob": 0.4429,
+     "honmei_prob": 0.4264,
      "flag": "mid",
-     "top1_combo": "1-2-6",
-     "top1_prob": 0.039
+     "top1_combo": "1-3-5",
+     "top1_prob": 0.0276
     },
     {
-     "race_id": "202610170402",
+     "race_id": "202610180402",
      "rno": 2,
-     "deadline": "10:57",
+     "deadline": "10:58",
      "honmei_lane": 1,
-     "honmei_prob": 0.3962,
+     "honmei_prob": 0.3944,
      "flag": "mid",
-     "top1_combo": "1-4-2",
-     "top1_prob": 0.0336
+     "top1_combo": "1-4-3",
+     "top1_prob": 0.0382
     },
     {
-     "race_id": "202610170403",
+     "race_id": "202610180403",
      "rno": 3,
-     "deadline": "11:25",
+     "deadline": "11:26",
      "honmei_lane": 1,
-     "honmei_prob": 0.4427,
+     "honmei_prob": 0.479,
      "flag": "mid",
-     "top1_combo": "1-2-5",
-     "top1_prob": 0.0429
+     "top1_combo": "1-3-5",
+     "top1_prob": 0.0436
     },
     {
-     "race_id": "202610170404",
+     "race_id": "202610180404",
      "rno": 4,
-     "deadline": "11:53",
+     "deadline": "11:55",
      "honmei_lane": 1,
-     "honmei_prob": 0.525,
+     "honmei_prob": 0.5264,
      "flag": "mid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.0602
+     "top1_combo": "1-3-6",
+     "top1_prob": 0.0412
     },
     {
-     "race_id": "202610170405",
+     "race_id": "202610180405",
      "rno": 5,
-     "deadline": "12:22",
+     "deadline": "12:24",
      "honmei_lane": 1,
-     "honmei_prob": 0.5009,
+     "honmei_prob": 0.4329,
      "flag": "mid",
-     "top1_combo": "1-2-5",
-     "top1_prob": 0.0464
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.0426
     },
     {
-     "race_id": "202610170406",
+     "race_id": "202610180406",
      "rno": 6,
-     "deadline": "12:51",
+     "deadline": "12:54",
      "honmei_lane": 1,
-     "honmei_prob": 0.4524,
+     "honmei_prob": 0.5217,
      "flag": "mid",
-     "top1_combo": "1-2-6",
-     "top1_prob": 0.0336
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.0537
     },
     {
-     "race_id": "202610170407",
+     "race_id": "202610180407",
      "rno": 7,
-     "deadline": "13:21",
+     "deadline": "13:24",
      "honmei_lane": 1,
-     "honmei_prob": 0.5356,
-     "flag": "mid",
-     "top1_combo": "1-2-5",
-     "top1_prob": 0.0571
-    },
-    {
-     "race_id": "202610170408",
-     "rno": 8,
-     "deadline": "13:53",
-     "honmei_lane": 1,
-     "honmei_prob": 0.5152,
-     "flag": "mid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.0459
-    },
-    {
-     "race_id": "202610170409",
-     "rno": 9,
-     "deadline": "14:26",
-     "honmei_lane": 1,
-     "honmei_prob": 0.3618,
-     "flag": "mid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.0365
-    },
-    {
-     "race_id": "202610170410",
-     "rno": 10,
-     "deadline": "15:04",
-     "honmei_lane": 1,
-     "honmei_prob": 0.4674,
+     "honmei_prob": 0.4758,
      "flag": "mid",
      "top1_combo": "1-3-4",
-     "top1_prob": 0.0386
+     "top1_prob": 0.047
     },
     {
-     "race_id": "202610170411",
-     "rno": 11,
-     "deadline": "15:42",
+     "race_id": "202610180408",
+     "rno": 8,
+     "deadline": "13:56",
      "honmei_lane": 1,
-     "honmei_prob": 0.6095,
+     "honmei_prob": 0.5943,
      "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.0578
+     "top1_combo": "1-2-6",
+     "top1_prob": 0.0504
     },
     {
-     "race_id": "202610170412",
+     "race_id": "202610180409",
+     "rno": 9,
+     "deadline": "14:29",
+     "honmei_lane": 1,
+     "honmei_prob": 0.4982,
+     "flag": "mid",
+     "top1_combo": "1-2-6",
+     "top1_prob": 0.0504
+    },
+    {
+     "race_id": "202610180410",
+     "rno": 10,
+     "deadline": "15:03",
+     "honmei_lane": 1,
+     "honmei_prob": 0.5686,
+     "flag": "solid",
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.0557
+    },
+    {
+     "race_id": "202610180411",
+     "rno": 11,
+     "deadline": "15:39",
+     "honmei_lane": 1,
+     "honmei_prob": 0.5867,
+     "flag": "solid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.0496
+    },
+    {
+     "race_id": "202610180412",
      "rno": 12,
      "deadline": "16:20",
      "honmei_lane": 1,
-     "honmei_prob": 0.7038,
+     "honmei_prob": 0.6327,
      "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.0722
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.0728
     }
    ]
   },
@@ -510,124 +510,124 @@
    "name": "常滑",
    "races": [
     {
-     "race_id": "202610170801",
+     "race_id": "202610180801",
      "rno": 1,
      "deadline": "10:18",
      "honmei_lane": 1,
-     "honmei_prob": 0.5559,
+     "honmei_prob": 0.6932,
      "flag": "solid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.1004
+     "top1_combo": "1-3-5",
+     "top1_prob": 0.0639
     },
     {
-     "race_id": "202610170802",
+     "race_id": "202610180802",
      "rno": 2,
      "deadline": "10:45",
-     "honmei_lane": 1,
-     "honmei_prob": 0.4156,
-     "flag": "mid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.0785
-    },
-    {
-     "race_id": "202610170803",
-     "rno": 3,
-     "deadline": "11:12",
      "honmei_lane": 3,
-     "honmei_prob": 0.2683,
-     "flag": "rough",
-     "top1_combo": "3-4-6",
-     "top1_prob": 0.0366
-    },
-    {
-     "race_id": "202610170804",
-     "rno": 4,
-     "deadline": "11:43",
-     "honmei_lane": 4,
-     "honmei_prob": 0.472,
+     "honmei_prob": 0.325,
      "flag": "mid",
-     "top1_combo": "4-3-5",
-     "top1_prob": 0.0561
+     "top1_combo": "1-3-5",
+     "top1_prob": 0.0458
     },
     {
-     "race_id": "202610170805",
-     "rno": 5,
-     "deadline": "12:17",
+     "race_id": "202610180803",
+     "rno": 3,
+     "deadline": "11:19",
      "honmei_lane": 1,
-     "honmei_prob": 0.6446,
-     "flag": "solid",
-     "top1_combo": "1-2-5",
-     "top1_prob": 0.0838
+     "honmei_prob": 0.4086,
+     "flag": "mid",
+     "top1_combo": "1-4-2",
+     "top1_prob": 0.0803
     },
     {
-     "race_id": "202610170806",
+     "race_id": "202610180804",
+     "rno": 4,
+     "deadline": "11:49",
+     "honmei_lane": 1,
+     "honmei_prob": 0.4107,
+     "flag": "mid",
+     "top1_combo": "1-3-4",
+     "top1_prob": 0.0641
+    },
+    {
+     "race_id": "202610180805",
+     "rno": 5,
+     "deadline": "12:18",
+     "honmei_lane": 1,
+     "honmei_prob": 0.6861,
+     "flag": "solid",
+     "top1_combo": "1-2-6",
+     "top1_prob": 0.1408
+    },
+    {
+     "race_id": "202610180806",
      "rno": 6,
      "deadline": "12:48",
      "honmei_lane": 1,
-     "honmei_prob": 0.5442,
-     "flag": "mid",
-     "top1_combo": "1-3-6",
-     "top1_prob": 0.0543
+     "honmei_prob": 0.6938,
+     "flag": "solid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1091
     },
     {
-     "race_id": "202610170807",
+     "race_id": "202610180807",
      "rno": 7,
-     "deadline": "13:19",
-     "honmei_lane": 1,
-     "honmei_prob": 0.528,
+     "deadline": "13:20",
+     "honmei_lane": 2,
+     "honmei_prob": 0.549,
      "flag": "mid",
-     "top1_combo": "1-2-5",
-     "top1_prob": 0.144
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1012
     },
     {
-     "race_id": "202610170808",
+     "race_id": "202610180808",
      "rno": 8,
      "deadline": "13:48",
      "honmei_lane": 1,
-     "honmei_prob": 0.5164,
+     "honmei_prob": 0.4932,
      "flag": "mid",
-     "top1_combo": "1-2-6",
-     "top1_prob": 0.1049
+     "top1_combo": "1-4-2",
+     "top1_prob": 0.0788
     },
     {
-     "race_id": "202610170809",
+     "race_id": "202610180809",
      "rno": 9,
      "deadline": "14:18",
      "honmei_lane": 1,
-     "honmei_prob": 0.6027,
-     "flag": "solid",
-     "top1_combo": "1-3-5",
-     "top1_prob": 0.0947
+     "honmei_prob": 0.3672,
+     "flag": "mid",
+     "top1_combo": "1-2-6",
+     "top1_prob": 0.0702
     },
     {
-     "race_id": "202610170810",
+     "race_id": "202610180810",
      "rno": 10,
      "deadline": "14:50",
-     "honmei_lane": 1,
-     "honmei_prob": 0.6136,
-     "flag": "solid",
-     "top1_combo": "1-3-4",
-     "top1_prob": 0.0789
+     "honmei_lane": 4,
+     "honmei_prob": 0.3136,
+     "flag": "mid",
+     "top1_combo": "4-3-2",
+     "top1_prob": 0.0412
     },
     {
-     "race_id": "202610170811",
+     "race_id": "202610180811",
      "rno": 11,
      "deadline": "15:29",
      "honmei_lane": 1,
-     "honmei_prob": 0.7746,
+     "honmei_prob": 0.6773,
      "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.1333
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.162
     },
     {
-     "race_id": "202610170812",
+     "race_id": "202610180812",
      "rno": 12,
-     "deadline": "16:01",
+     "deadline": "16:03",
      "honmei_lane": 1,
-     "honmei_prob": 0.7791,
+     "honmei_prob": 0.5993,
      "flag": "solid",
-     "top1_combo": "1-4-3",
-     "top1_prob": 0.0856
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.0956
     }
    ]
   },
@@ -636,124 +636,124 @@
    "name": "津",
    "races": [
     {
-     "race_id": "202610170901",
+     "race_id": "202610180901",
      "rno": 1,
      "deadline": "10:32",
      "honmei_lane": 1,
-     "honmei_prob": 0.588,
+     "honmei_prob": 0.7885,
      "flag": "solid",
      "top1_combo": "1-2-3",
-     "top1_prob": 0.0846
+     "top1_prob": 0.101
     },
     {
-     "race_id": "202610170902",
+     "race_id": "202610180902",
      "rno": 2,
      "deadline": "11:01",
      "honmei_lane": 1,
-     "honmei_prob": 0.7595,
+     "honmei_prob": 0.5538,
      "flag": "solid",
      "top1_combo": "1-2-3",
-     "top1_prob": 0.192
+     "top1_prob": 0.1789
     },
     {
-     "race_id": "202610170903",
+     "race_id": "202610180903",
      "rno": 3,
      "deadline": "11:30",
-     "honmei_lane": 4,
-     "honmei_prob": 0.3967,
+     "honmei_lane": 3,
+     "honmei_prob": 0.4731,
      "flag": "mid",
-     "top1_combo": "4-1-2",
-     "top1_prob": 0.0742
+     "top1_combo": "3-1-6",
+     "top1_prob": 0.0605
     },
     {
-     "race_id": "202610170904",
+     "race_id": "202610180904",
      "rno": 4,
      "deadline": "11:59",
      "honmei_lane": 1,
-     "honmei_prob": 0.5603,
-     "flag": "solid",
-     "top1_combo": "1-2-5",
-     "top1_prob": 0.0845
-    },
-    {
-     "race_id": "202610170905",
-     "rno": 5,
-     "deadline": "12:28",
-     "honmei_lane": 1,
-     "honmei_prob": 0.7199,
-     "flag": "solid",
-     "top1_combo": "1-2-6",
-     "top1_prob": 0.1026
-    },
-    {
-     "race_id": "202610170906",
-     "rno": 6,
-     "deadline": "12:56",
-     "honmei_lane": 1,
-     "honmei_prob": 0.3546,
+     "honmei_prob": 0.4321,
      "flag": "mid",
-     "top1_combo": "1-3-6",
-     "top1_prob": 0.0632
-    },
-    {
-     "race_id": "202610170907",
-     "rno": 7,
-     "deadline": "13:26",
-     "honmei_lane": 1,
-     "honmei_prob": 0.3857,
-     "flag": "mid",
-     "top1_combo": "1-3-6",
-     "top1_prob": 0.0723
-    },
-    {
-     "race_id": "202610170908",
-     "rno": 8,
-     "deadline": "14:01",
-     "honmei_lane": 1,
-     "honmei_prob": 0.496,
-     "flag": "mid",
-     "top1_combo": "1-2-6",
-     "top1_prob": 0.0518
-    },
-    {
-     "race_id": "202610170909",
-     "rno": 9,
-     "deadline": "14:34",
-     "honmei_lane": 1,
-     "honmei_prob": 0.5704,
-     "flag": "solid",
      "top1_combo": "1-2-4",
-     "top1_prob": 0.1187
+     "top1_prob": 0.0656
     },
     {
-     "race_id": "202610170910",
-     "rno": 10,
-     "deadline": "15:08",
-     "honmei_lane": 1,
-     "honmei_prob": 0.6797,
-     "flag": "solid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.1808
-    },
-    {
-     "race_id": "202610170911",
-     "rno": 11,
-     "deadline": "15:38",
+     "race_id": "202610180905",
+     "rno": 5,
+     "deadline": "12:29",
      "honmei_lane": 1,
      "honmei_prob": 0.6552,
      "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.1446
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1511
     },
     {
-     "race_id": "202610170912",
+     "race_id": "202610180906",
+     "rno": 6,
+     "deadline": "12:58",
+     "honmei_lane": 1,
+     "honmei_prob": 0.5796,
+     "flag": "solid",
+     "top1_combo": "1-3-2",
+     "top1_prob": 0.0563
+    },
+    {
+     "race_id": "202610180907",
+     "rno": 7,
+     "deadline": "13:28",
+     "honmei_lane": 1,
+     "honmei_prob": 0.5865,
+     "flag": "solid",
+     "top1_combo": "1-5-3",
+     "top1_prob": 0.0932
+    },
+    {
+     "race_id": "202610180908",
+     "rno": 8,
+     "deadline": "14:01",
+     "honmei_lane": 1,
+     "honmei_prob": 0.5443,
+     "flag": "mid",
+     "top1_combo": "1-4-6",
+     "top1_prob": 0.086
+    },
+    {
+     "race_id": "202610180909",
+     "rno": 9,
+     "deadline": "14:34",
+     "honmei_lane": 3,
+     "honmei_prob": 0.3373,
+     "flag": "mid",
+     "top1_combo": "3-1-5",
+     "top1_prob": 0.0472
+    },
+    {
+     "race_id": "202610180910",
+     "rno": 10,
+     "deadline": "15:07",
+     "honmei_lane": 1,
+     "honmei_prob": 0.6726,
+     "flag": "solid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1035
+    },
+    {
+     "race_id": "202610180911",
+     "rno": 11,
+     "deadline": "15:36",
+     "honmei_lane": 1,
+     "honmei_prob": 0.7524,
+     "flag": "solid",
+     "top1_combo": "1-3-5",
+     "top1_prob": 0.1212
+    },
+    {
+     "race_id": "202610180912",
      "rno": 12,
      "deadline": "16:15",
      "honmei_lane": 1,
-     "honmei_prob": 0.7814,
+     "honmei_prob": 0.7749,
      "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.0761
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1459
     }
    ]
   },
@@ -762,376 +762,124 @@
    "name": "三国",
    "races": [
     {
-     "race_id": "202610171001",
+     "race_id": "202610181001",
      "rno": 1,
      "deadline": "08:51",
      "honmei_lane": 1,
-     "honmei_prob": 0.7631,
+     "honmei_prob": 0.7912,
      "flag": "solid",
      "top1_combo": "1-2-3",
-     "top1_prob": 0.1288
+     "top1_prob": 0.114
     },
     {
-     "race_id": "202610171002",
+     "race_id": "202610181002",
      "rno": 2,
      "deadline": "09:17",
      "honmei_lane": 1,
-     "honmei_prob": 0.6063,
+     "honmei_prob": 0.7247,
      "flag": "solid",
      "top1_combo": "1-2-3",
-     "top1_prob": 0.121
+     "top1_prob": 0.1514
     },
     {
-     "race_id": "202610171003",
+     "race_id": "202610181003",
      "rno": 3,
      "deadline": "09:43",
      "honmei_lane": 1,
-     "honmei_prob": 0.6269,
+     "honmei_prob": 0.631,
      "flag": "solid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.1038
+     "top1_combo": "1-3-2",
+     "top1_prob": 0.0811
     },
     {
-     "race_id": "202610171004",
+     "race_id": "202610181004",
      "rno": 4,
      "deadline": "10:09",
      "honmei_lane": 1,
-     "honmei_prob": 0.6204,
-     "flag": "solid",
-     "top1_combo": "1-5-4",
-     "top1_prob": 0.0613
-    },
-    {
-     "race_id": "202610171005",
-     "rno": 5,
-     "deadline": "10:36",
-     "honmei_lane": 1,
-     "honmei_prob": 0.6061,
-     "flag": "solid",
-     "top1_combo": "1-4-6",
-     "top1_prob": 0.073
-    },
-    {
-     "race_id": "202610171006",
-     "rno": 6,
-     "deadline": "11:09",
-     "honmei_lane": 1,
-     "honmei_prob": 0.3017,
-     "flag": "mid",
-     "top1_combo": "1-3-4",
-     "top1_prob": 0.0392
-    },
-    {
-     "race_id": "202610171007",
-     "rno": 7,
-     "deadline": "11:38",
-     "honmei_lane": 1,
-     "honmei_prob": 0.4077,
-     "flag": "mid",
-     "top1_combo": "1-2-6",
-     "top1_prob": 0.0357
-    },
-    {
-     "race_id": "202610171008",
-     "rno": 8,
-     "deadline": "12:11",
-     "honmei_lane": 1,
-     "honmei_prob": 0.4101,
-     "flag": "mid",
-     "top1_combo": "1-2-5",
-     "top1_prob": 0.0879
-    },
-    {
-     "race_id": "202610171009",
-     "rno": 9,
-     "deadline": "12:41",
-     "honmei_lane": 1,
-     "honmei_prob": 0.4642,
-     "flag": "mid",
-     "top1_combo": "1-4-3",
-     "top1_prob": 0.0697
-    },
-    {
-     "race_id": "202610171010",
-     "rno": 10,
-     "deadline": "13:17",
-     "honmei_lane": 1,
-     "honmei_prob": 0.4382,
-     "flag": "mid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.0536
-    },
-    {
-     "race_id": "202610171011",
-     "rno": 11,
-     "deadline": "13:50",
-     "honmei_lane": 1,
-     "honmei_prob": 0.4332,
-     "flag": "mid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.1139
-    },
-    {
-     "race_id": "202610171012",
-     "rno": 12,
-     "deadline": "14:30",
-     "honmei_lane": 1,
-     "honmei_prob": 0.6701,
-     "flag": "solid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.1424
-    }
-   ]
-  },
-  {
-   "jcd": "13",
-   "name": "尼崎",
-   "races": [
-    {
-     "race_id": "202610171301",
-     "rno": 1,
-     "deadline": "10:42",
-     "honmei_lane": 1,
-     "honmei_prob": 0.336,
-     "flag": "mid",
-     "top1_combo": "2-3-4",
-     "top1_prob": 0.042
-    },
-    {
-     "race_id": "202610171302",
-     "rno": 2,
-     "deadline": "11:07",
-     "honmei_lane": 1,
-     "honmei_prob": 0.7061,
-     "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.1364
-    },
-    {
-     "race_id": "202610171303",
-     "rno": 3,
-     "deadline": "11:36",
-     "honmei_lane": 2,
-     "honmei_prob": 0.3548,
-     "flag": "mid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.067
-    },
-    {
-     "race_id": "202610171304",
-     "rno": 4,
-     "deadline": "12:03",
-     "honmei_lane": 1,
-     "honmei_prob": 0.3581,
-     "flag": "mid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.044
-    },
-    {
-     "race_id": "202610171305",
-     "rno": 5,
-     "deadline": "12:33",
-     "honmei_lane": 1,
-     "honmei_prob": 0.52,
-     "flag": "mid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.0846
-    },
-    {
-     "race_id": "202610171306",
-     "rno": 6,
-     "deadline": "13:00",
-     "honmei_lane": 1,
-     "honmei_prob": 0.5968,
-     "flag": "solid",
-     "top1_combo": "1-4-3",
-     "top1_prob": 0.1141
-    },
-    {
-     "race_id": "202610171307",
-     "rno": 7,
-     "deadline": "13:28",
-     "honmei_lane": 1,
-     "honmei_prob": 0.7291,
-     "flag": "solid",
-     "top1_combo": "1-4-5",
-     "top1_prob": 0.1283
-    },
-    {
-     "race_id": "202610171308",
-     "rno": 8,
-     "deadline": "14:04",
-     "honmei_lane": 1,
-     "honmei_prob": 0.6954,
-     "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.1667
-    },
-    {
-     "race_id": "202610171309",
-     "rno": 9,
-     "deadline": "14:37",
-     "honmei_lane": 1,
-     "honmei_prob": 0.5858,
-     "flag": "solid",
-     "top1_combo": "1-3-4",
-     "top1_prob": 0.0855
-    },
-    {
-     "race_id": "202610171310",
-     "rno": 10,
-     "deadline": "15:00",
-     "honmei_lane": 1,
-     "honmei_prob": 0.7823,
-     "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.097
-    },
-    {
-     "race_id": "202610171311",
-     "rno": 11,
-     "deadline": "15:33",
-     "honmei_lane": 1,
-     "honmei_prob": 0.6373,
-     "flag": "solid",
-     "top1_combo": "1-3-2",
-     "top1_prob": 0.0991
-    },
-    {
-     "race_id": "202610171312",
-     "rno": 12,
-     "deadline": "16:05",
-     "honmei_lane": 1,
-     "honmei_prob": 0.7575,
-     "flag": "solid",
-     "top1_combo": "1-3-4",
-     "top1_prob": 0.0893
-    }
-   ]
-  },
-  {
-   "jcd": "14",
-   "name": "鳴門",
-   "races": [
-    {
-     "race_id": "202610171401",
-     "rno": 1,
-     "deadline": "08:35",
-     "honmei_lane": 1,
-     "honmei_prob": 0.7935,
+     "honmei_prob": 0.5937,
      "flag": "solid",
      "top1_combo": "1-2-5",
-     "top1_prob": 0.0953
-    },
-    {
-     "race_id": "202610171402",
-     "rno": 2,
-     "deadline": "09:01",
-     "honmei_lane": 1,
-     "honmei_prob": 0.5908,
-     "flag": "solid",
-     "top1_combo": "1-4-6",
-     "top1_prob": 0.0528
-    },
-    {
-     "race_id": "202610171403",
-     "rno": 3,
-     "deadline": "09:27",
-     "honmei_lane": 1,
-     "honmei_prob": 0.7723,
-     "flag": "solid",
-     "top1_combo": "1-2-4",
      "top1_prob": 0.0933
     },
     {
-     "race_id": "202610171404",
-     "rno": 4,
-     "deadline": "09:53",
-     "honmei_lane": 1,
-     "honmei_prob": 0.6312,
-     "flag": "solid",
-     "top1_combo": "1-3-4",
-     "top1_prob": 0.1276
-    },
-    {
-     "race_id": "202610171405",
+     "race_id": "202610181005",
      "rno": 5,
-     "deadline": "10:26",
+     "deadline": "10:41",
      "honmei_lane": 1,
-     "honmei_prob": 0.3946,
-     "flag": "mid",
-     "top1_combo": "1-5-3",
-     "top1_prob": 0.0666
-    },
-    {
-     "race_id": "202610171406",
-     "rno": 6,
-     "deadline": "10:53",
-     "honmei_lane": 1,
-     "honmei_prob": 0.513,
-     "flag": "mid",
-     "top1_combo": "1-3-4",
-     "top1_prob": 0.1133
-    },
-    {
-     "race_id": "202610171407",
-     "rno": 7,
-     "deadline": "11:21",
-     "honmei_lane": 1,
-     "honmei_prob": 0.3651,
-     "flag": "mid",
+     "honmei_prob": 0.7302,
+     "flag": "solid",
      "top1_combo": "1-3-2",
-     "top1_prob": 0.0461
+     "top1_prob": 0.1036
     },
     {
-     "race_id": "202610171408",
-     "rno": 8,
-     "deadline": "11:50",
+     "race_id": "202610181006",
+     "rno": 6,
+     "deadline": "11:11",
      "honmei_lane": 1,
-     "honmei_prob": 0.3934,
+     "honmei_prob": 0.3218,
+     "flag": "mid",
+     "top1_combo": "1-2-6",
+     "top1_prob": 0.0272
+    },
+    {
+     "race_id": "202610181007",
+     "rno": 7,
+     "deadline": "11:39",
+     "honmei_lane": 1,
+     "honmei_prob": 0.2829,
+     "flag": "rough",
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.0448
+    },
+    {
+     "race_id": "202610181008",
+     "rno": 8,
+     "deadline": "12:11",
+     "honmei_lane": 1,
+     "honmei_prob": 0.5308,
+     "flag": "mid",
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.0926
+    },
+    {
+     "race_id": "202610181009",
+     "rno": 9,
+     "deadline": "12:41",
+     "honmei_lane": 1,
+     "honmei_prob": 0.332,
      "flag": "mid",
      "top1_combo": "1-4-2",
-     "top1_prob": 0.0585
-    },
-    {
-     "race_id": "202610171409",
-     "rno": 9,
-     "deadline": "12:19",
-     "honmei_lane": 1,
-     "honmei_prob": 0.5797,
-     "flag": "solid",
-     "top1_combo": "1-2-6",
      "top1_prob": 0.0609
     },
     {
-     "race_id": "202610171410",
+     "race_id": "202610181010",
      "rno": 10,
-     "deadline": "12:58",
-     "honmei_lane": 1,
-     "honmei_prob": 0.4621,
+     "deadline": "13:17",
+     "honmei_lane": 2,
+     "honmei_prob": 0.3356,
      "flag": "mid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.0712
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.048
     },
     {
-     "race_id": "202610171411",
+     "race_id": "202610181011",
      "rno": 11,
-     "deadline": "13:35",
+     "deadline": "13:51",
      "honmei_lane": 1,
-     "honmei_prob": 0.6151,
+     "honmei_prob": 0.6808,
      "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.1302
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.0999
     },
     {
-     "race_id": "202610171412",
+     "race_id": "202610181012",
      "rno": 12,
-     "deadline": "14:13",
+     "deadline": "14:26",
      "honmei_lane": 1,
-     "honmei_prob": 0.612,
+     "honmei_prob": 0.6828,
      "flag": "solid",
-     "top1_combo": "1-3-4",
-     "top1_prob": 0.0667
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1169
     }
    ]
   },
@@ -1140,124 +888,250 @@
    "name": "児島",
    "races": [
     {
-     "race_id": "202610171601",
+     "race_id": "202610181601",
      "rno": 1,
-     "deadline": "10:51",
+     "deadline": "10:55",
      "honmei_lane": 1,
-     "honmei_prob": 0.5981,
+     "honmei_prob": 0.6043,
      "flag": "solid",
-     "top1_combo": "1-4-2",
-     "top1_prob": 0.05
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.1369
     },
     {
-     "race_id": "202610171602",
+     "race_id": "202610181602",
      "rno": 2,
-     "deadline": "11:19",
+     "deadline": "11:24",
      "honmei_lane": 1,
-     "honmei_prob": 0.505,
+     "honmei_prob": 0.5439,
      "flag": "mid",
-     "top1_combo": "1-3-6",
-     "top1_prob": 0.0522
+     "top1_combo": "1-3-4",
+     "top1_prob": 0.0435
     },
     {
-     "race_id": "202610171603",
+     "race_id": "202610181603",
      "rno": 3,
-     "deadline": "11:58",
+     "deadline": "11:52",
      "honmei_lane": 1,
-     "honmei_prob": 0.3887,
+     "honmei_prob": 0.5163,
      "flag": "mid",
-     "top1_combo": "1-2-5",
-     "top1_prob": 0.0443
+     "top1_combo": "1-3-4",
+     "top1_prob": 0.0645
     },
     {
-     "race_id": "202610171604",
+     "race_id": "202610181604",
      "rno": 4,
-     "deadline": "12:30",
+     "deadline": "12:22",
      "honmei_lane": 1,
-     "honmei_prob": 0.398,
+     "honmei_prob": 0.4746,
      "flag": "mid",
-     "top1_combo": "1-4-6",
-     "top1_prob": 0.0689
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.0809
     },
     {
-     "race_id": "202610171605",
+     "race_id": "202610181605",
      "rno": 5,
-     "deadline": "13:07",
+     "deadline": "12:52",
      "honmei_lane": 1,
-     "honmei_prob": 0.393,
+     "honmei_prob": 0.4959,
      "flag": "mid",
-     "top1_combo": "2-1-3",
-     "top1_prob": 0.0579
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.0581
     },
     {
-     "race_id": "202610171606",
+     "race_id": "202610181606",
      "rno": 6,
-     "deadline": "13:39",
-     "honmei_lane": 1,
-     "honmei_prob": 0.4613,
+     "deadline": "13:32",
+     "honmei_lane": 2,
+     "honmei_prob": 0.3224,
      "flag": "mid",
-     "top1_combo": "1-3-6",
-     "top1_prob": 0.1068
+     "top1_combo": "2-1-4",
+     "top1_prob": 0.0478
     },
     {
-     "race_id": "202610171607",
+     "race_id": "202610181607",
      "rno": 7,
-     "deadline": "14:10",
-     "honmei_lane": 5,
-     "honmei_prob": 0.3344,
+     "deadline": "14:08",
+     "honmei_lane": 1,
+     "honmei_prob": 0.508,
      "flag": "mid",
-     "top1_combo": "1-5-2",
-     "top1_prob": 0.1309
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.0904
     },
     {
-     "race_id": "202610171608",
+     "race_id": "202610181608",
      "rno": 8,
-     "deadline": "14:43",
-     "honmei_lane": 5,
-     "honmei_prob": 0.4815,
+     "deadline": "14:42",
+     "honmei_lane": 1,
+     "honmei_prob": 0.5116,
      "flag": "mid",
-     "top1_combo": "1-5-3",
-     "top1_prob": 0.0957
+     "top1_combo": "1-3-2",
+     "top1_prob": 0.0921
     },
     {
-     "race_id": "202610171609",
+     "race_id": "202610181609",
      "rno": 9,
-     "deadline": "15:10",
+     "deadline": "15:14",
      "honmei_lane": 1,
-     "honmei_prob": 0.4452,
-     "flag": "mid",
+     "honmei_prob": 0.7408,
+     "flag": "solid",
      "top1_combo": "1-2-6",
-     "top1_prob": 0.2136
+     "top1_prob": 0.1251
     },
     {
-     "race_id": "202610171610",
+     "race_id": "202610181610",
      "rno": 10,
-     "deadline": "15:37",
+     "deadline": "15:46",
      "honmei_lane": 1,
-     "honmei_prob": 0.5242,
-     "flag": "mid",
-     "top1_combo": "1-3-6",
-     "top1_prob": 0.0958
+     "honmei_prob": 0.5988,
+     "flag": "solid",
+     "top1_combo": "1-4-3",
+     "top1_prob": 0.09
     },
     {
-     "race_id": "202610171611",
+     "race_id": "202610181611",
      "rno": 11,
-     "deadline": "16:09",
+     "deadline": "16:14",
      "honmei_lane": 1,
-     "honmei_prob": 0.7902,
+     "honmei_prob": 0.5957,
+     "flag": "solid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.099
+    },
+    {
+     "race_id": "202610181612",
+     "rno": 12,
+     "deadline": "16:47",
+     "honmei_lane": 1,
+     "honmei_prob": 0.7195,
+     "flag": "solid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1135
+    }
+   ]
+  },
+  {
+   "jcd": "18",
+   "name": "徳山",
+   "races": [
+    {
+     "race_id": "202610181801",
+     "rno": 1,
+     "deadline": "08:35",
+     "honmei_lane": 1,
+     "honmei_prob": 0.7606,
+     "flag": "solid",
+     "top1_combo": "1-3-4",
+     "top1_prob": 0.1046
+    },
+    {
+     "race_id": "202610181802",
+     "rno": 2,
+     "deadline": "09:01",
+     "honmei_lane": 1,
+     "honmei_prob": 0.7225,
+     "flag": "solid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1345
+    },
+    {
+     "race_id": "202610181803",
+     "rno": 3,
+     "deadline": "09:27",
+     "honmei_lane": 1,
+     "honmei_prob": 0.7739,
+     "flag": "solid",
+     "top1_combo": "1-3-4",
+     "top1_prob": 0.0864
+    },
+    {
+     "race_id": "202610181804",
+     "rno": 4,
+     "deadline": "09:53",
+     "honmei_lane": 1,
+     "honmei_prob": 0.6811,
+     "flag": "solid",
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.1106
+    },
+    {
+     "race_id": "202610181805",
+     "rno": 5,
+     "deadline": "10:20",
+     "honmei_lane": 1,
+     "honmei_prob": 0.6604,
      "flag": "solid",
      "top1_combo": "1-2-5",
-     "top1_prob": 0.0489
+     "top1_prob": 0.1046
     },
     {
-     "race_id": "202610171612",
-     "rno": 12,
-     "deadline": "16:50",
+     "race_id": "202610181806",
+     "rno": 6,
+     "deadline": "10:50",
      "honmei_lane": 1,
-     "honmei_prob": 0.7392,
+     "honmei_prob": 0.3322,
+     "flag": "mid",
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.0637
+    },
+    {
+     "race_id": "202610181807",
+     "rno": 7,
+     "deadline": "11:22",
+     "honmei_lane": 1,
+     "honmei_prob": 0.3654,
+     "flag": "mid",
+     "top1_combo": "1-3-5",
+     "top1_prob": 0.0564
+    },
+    {
+     "race_id": "202610181808",
+     "rno": 8,
+     "deadline": "11:54",
+     "honmei_lane": 1,
+     "honmei_prob": 0.481,
+     "flag": "mid",
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.1588
+    },
+    {
+     "race_id": "202610181809",
+     "rno": 9,
+     "deadline": "12:27",
+     "honmei_lane": 1,
+     "honmei_prob": 0.5664,
      "flag": "solid",
-     "top1_combo": "1-4-2",
-     "top1_prob": 0.0729
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.1065
+    },
+    {
+     "race_id": "202610181810",
+     "rno": 10,
+     "deadline": "13:00",
+     "honmei_lane": 1,
+     "honmei_prob": 0.5584,
+     "flag": "solid",
+     "top1_combo": "1-4-3",
+     "top1_prob": 0.1041
+    },
+    {
+     "race_id": "202610181811",
+     "rno": 11,
+     "deadline": "13:34",
+     "honmei_lane": 1,
+     "honmei_prob": 0.6716,
+     "flag": "solid",
+     "top1_combo": "1-3-4",
+     "top1_prob": 0.1294
+    },
+    {
+     "race_id": "202610181812",
+     "rno": 12,
+     "deadline": "14:13",
+     "honmei_lane": 1,
+     "honmei_prob": 0.7363,
+     "flag": "solid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.0965
     }
    ]
   },
@@ -1266,124 +1140,124 @@
    "name": "下関",
    "races": [
     {
-     "race_id": "202610171901",
+     "race_id": "202610181901",
      "rno": 1,
      "deadline": "17:41",
-     "honmei_lane": 4,
-     "honmei_prob": 0.3031,
+     "honmei_lane": 1,
+     "honmei_prob": 0.4896,
      "flag": "mid",
-     "top1_combo": "4-2-1",
-     "top1_prob": 0.0389
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.0709
     },
     {
-     "race_id": "202610171902",
+     "race_id": "202610181902",
      "rno": 2,
      "deadline": "18:08",
      "honmei_lane": 1,
-     "honmei_prob": 0.6074,
-     "flag": "solid",
-     "top1_combo": "1-3-2",
-     "top1_prob": 0.0546
+     "honmei_prob": 0.4723,
+     "flag": "mid",
+     "top1_combo": "1-4-5",
+     "top1_prob": 0.0453
     },
     {
-     "race_id": "202610171903",
+     "race_id": "202610181903",
      "rno": 3,
      "deadline": "18:34",
      "honmei_lane": 1,
-     "honmei_prob": 0.3133,
+     "honmei_prob": 0.4769,
      "flag": "mid",
-     "top1_combo": "1-5-6",
-     "top1_prob": 0.0662
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.1099
     },
     {
-     "race_id": "202610171904",
+     "race_id": "202610181904",
      "rno": 4,
      "deadline": "19:03",
-     "honmei_lane": 2,
-     "honmei_prob": 0.3445,
+     "honmei_lane": 1,
+     "honmei_prob": 0.3442,
      "flag": "mid",
-     "top1_combo": "2-3-4",
-     "top1_prob": 0.0549
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.0699
     },
     {
-     "race_id": "202610171905",
+     "race_id": "202610181905",
      "rno": 5,
      "deadline": "19:30",
      "honmei_lane": 1,
-     "honmei_prob": 0.6906,
+     "honmei_prob": 0.6812,
      "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.103
+     "top1_combo": "1-4-2",
+     "top1_prob": 0.1408
     },
     {
-     "race_id": "202610171906",
+     "race_id": "202610181906",
      "rno": 6,
      "deadline": "19:56",
      "honmei_lane": 1,
-     "honmei_prob": 0.408,
+     "honmei_prob": 0.4055,
      "flag": "mid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.0643
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.0742
     },
     {
-     "race_id": "202610171907",
+     "race_id": "202610181907",
      "rno": 7,
      "deadline": "20:25",
      "honmei_lane": 1,
-     "honmei_prob": 0.5145,
-     "flag": "mid",
-     "top1_combo": "1-3-5",
-     "top1_prob": 0.104
+     "honmei_prob": 0.7036,
+     "flag": "solid",
+     "top1_combo": "1-5-6",
+     "top1_prob": 0.0719
     },
     {
-     "race_id": "202610171908",
+     "race_id": "202610181908",
      "rno": 8,
      "deadline": "20:59",
      "honmei_lane": 1,
-     "honmei_prob": 0.6153,
+     "honmei_prob": 0.585,
      "flag": "solid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.1317
+     "top1_combo": "1-4-3",
+     "top1_prob": 0.0784
     },
     {
-     "race_id": "202610171909",
+     "race_id": "202610181909",
      "rno": 9,
      "deadline": "21:25",
      "honmei_lane": 1,
-     "honmei_prob": 0.7921,
+     "honmei_prob": 0.6117,
      "flag": "solid",
-     "top1_combo": "1-2-5",
-     "top1_prob": 0.1768
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.0969
     },
     {
-     "race_id": "202610171910",
+     "race_id": "202610181910",
      "rno": 10,
      "deadline": "21:51",
      "honmei_lane": 1,
-     "honmei_prob": 0.592,
-     "flag": "solid",
-     "top1_combo": "1-3-6",
-     "top1_prob": 0.0972
+     "honmei_prob": 0.5456,
+     "flag": "mid",
+     "top1_combo": "1-3-5",
+     "top1_prob": 0.126
     },
     {
-     "race_id": "202610171911",
+     "race_id": "202610181911",
      "rno": 11,
      "deadline": "22:18",
      "honmei_lane": 1,
-     "honmei_prob": 0.7192,
+     "honmei_prob": 0.7371,
      "flag": "solid",
-     "top1_combo": "1-3-4",
-     "top1_prob": 0.0945
+     "top1_combo": "1-4-3",
+     "top1_prob": 0.066
     },
     {
-     "race_id": "202610171912",
+     "race_id": "202610181912",
      "rno": 12,
      "deadline": "22:45",
      "honmei_lane": 1,
-     "honmei_prob": 0.7007,
+     "honmei_prob": 0.7385,
      "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.0894
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.1233
     }
    ]
   },
@@ -1392,124 +1266,124 @@
    "name": "若松",
    "races": [
     {
-     "race_id": "202610172001",
+     "race_id": "202610182001",
      "rno": 1,
-     "deadline": "15:21",
-     "honmei_lane": 3,
-     "honmei_prob": 0.5006,
-     "flag": "mid",
-     "top1_combo": "3-2-4",
-     "top1_prob": 0.0654
+     "deadline": "15:16",
+     "honmei_lane": 1,
+     "honmei_prob": 0.6144,
+     "flag": "solid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1178
     },
     {
-     "race_id": "202610172002",
+     "race_id": "202610182002",
      "rno": 2,
-     "deadline": "15:49",
+     "deadline": "15:43",
      "honmei_lane": 1,
-     "honmei_prob": 0.622,
+     "honmei_prob": 0.6084,
      "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.0767
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1611
     },
     {
-     "race_id": "202610172003",
+     "race_id": "202610182003",
      "rno": 3,
-     "deadline": "16:13",
+     "deadline": "16:07",
      "honmei_lane": 1,
-     "honmei_prob": 0.3532,
-     "flag": "mid",
-     "top1_combo": "1-3-2",
-     "top1_prob": 0.0792
-    },
-    {
-     "race_id": "202610172004",
-     "rno": 4,
-     "deadline": "16:42",
-     "honmei_lane": 1,
-     "honmei_prob": 0.6645,
-     "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.0858
-    },
-    {
-     "race_id": "202610172005",
-     "rno": 5,
-     "deadline": "17:09",
-     "honmei_lane": 1,
-     "honmei_prob": 0.6078,
-     "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.1175
-    },
-    {
-     "race_id": "202610172006",
-     "rno": 6,
-     "deadline": "17:34",
-     "honmei_lane": 1,
-     "honmei_prob": 0.6209,
+     "honmei_prob": 0.6548,
      "flag": "solid",
      "top1_combo": "1-3-4",
-     "top1_prob": 0.1516
+     "top1_prob": 0.1344
     },
     {
-     "race_id": "202610172007",
-     "rno": 7,
-     "deadline": "18:02",
+     "race_id": "202610182004",
+     "rno": 4,
+     "deadline": "16:30",
      "honmei_lane": 1,
-     "honmei_prob": 0.6562,
+     "honmei_prob": 0.4769,
+     "flag": "mid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1048
+    },
+    {
+     "race_id": "202610182005",
+     "rno": 5,
+     "deadline": "17:01",
+     "honmei_lane": 1,
+     "honmei_prob": 0.4453,
+     "flag": "mid",
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.154
+    },
+    {
+     "race_id": "202610182006",
+     "rno": 6,
+     "deadline": "17:29",
+     "honmei_lane": 1,
+     "honmei_prob": 0.8168,
      "flag": "solid",
-     "top1_combo": "1-3-6",
-     "top1_prob": 0.0747
+     "top1_combo": "1-3-2",
+     "top1_prob": 0.1616
     },
     {
-     "race_id": "202610172008",
-     "rno": 8,
-     "deadline": "18:41",
+     "race_id": "202610182007",
+     "rno": 7,
+     "deadline": "17:59",
      "honmei_lane": 1,
-     "honmei_prob": 0.6705,
+     "honmei_prob": 0.817,
      "flag": "solid",
      "top1_combo": "1-2-3",
-     "top1_prob": 0.1631
+     "top1_prob": 0.1661
     },
     {
-     "race_id": "202610172009",
-     "rno": 9,
-     "deadline": "19:10",
+     "race_id": "202610182008",
+     "rno": 8,
+     "deadline": "18:26",
      "honmei_lane": 1,
-     "honmei_prob": 0.569,
+     "honmei_prob": 0.7433,
      "flag": "solid",
      "top1_combo": "1-2-4",
-     "top1_prob": 0.0554
+     "top1_prob": 0.2036
     },
     {
-     "race_id": "202610172010",
+     "race_id": "202610182009",
+     "rno": 9,
+     "deadline": "18:55",
+     "honmei_lane": 1,
+     "honmei_prob": 0.7654,
+     "flag": "solid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1633
+    },
+    {
+     "race_id": "202610182010",
      "rno": 10,
-     "deadline": "19:39",
+     "deadline": "19:38",
      "honmei_lane": 1,
-     "honmei_prob": 0.7839,
+     "honmei_prob": 0.6711,
      "flag": "solid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.1357
+     "top1_combo": "1-4-5",
+     "top1_prob": 0.0761
     },
     {
-     "race_id": "202610172011",
+     "race_id": "202610182011",
      "rno": 11,
-     "deadline": "20:10",
+     "deadline": "20:06",
      "honmei_lane": 1,
-     "honmei_prob": 0.6016,
+     "honmei_prob": 0.8061,
      "flag": "solid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.1038
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.1117
     },
     {
-     "race_id": "202610172012",
+     "race_id": "202610182012",
      "rno": 12,
-     "deadline": "20:38",
+     "deadline": "20:36",
      "honmei_lane": 1,
-     "honmei_prob": 0.742,
+     "honmei_prob": 0.6075,
      "flag": "solid",
      "top1_combo": "1-2-3",
-     "top1_prob": 0.1039
+     "top1_prob": 0.0859
     }
    ]
   },
@@ -1518,250 +1392,250 @@
    "name": "芦屋",
    "races": [
     {
-     "race_id": "202610172101",
+     "race_id": "202610182101",
      "rno": 1,
      "deadline": "08:43",
      "honmei_lane": 1,
-     "honmei_prob": 0.7763,
+     "honmei_prob": 0.8043,
      "flag": "solid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.147
+     "top1_combo": "1-3-5",
+     "top1_prob": 0.0701
     },
     {
-     "race_id": "202610172102",
+     "race_id": "202610182102",
      "rno": 2,
      "deadline": "09:09",
      "honmei_lane": 1,
-     "honmei_prob": 0.6496,
+     "honmei_prob": 0.6865,
      "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.1157
+     "top1_combo": "1-4-3",
+     "top1_prob": 0.1192
     },
     {
-     "race_id": "202610172103",
+     "race_id": "202610182103",
      "rno": 3,
      "deadline": "09:35",
      "honmei_lane": 1,
-     "honmei_prob": 0.6598,
+     "honmei_prob": 0.7949,
      "flag": "solid",
-     "top1_combo": "1-3-5",
-     "top1_prob": 0.1258
+     "top1_combo": "1-3-2",
+     "top1_prob": 0.1166
     },
     {
-     "race_id": "202610172104",
+     "race_id": "202610182104",
      "rno": 4,
      "deadline": "10:01",
      "honmei_lane": 1,
-     "honmei_prob": 0.5408,
-     "flag": "mid",
-     "top1_combo": "1-4-2",
-     "top1_prob": 0.0902
+     "honmei_prob": 0.8031,
+     "flag": "solid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1312
     },
     {
-     "race_id": "202610172105",
+     "race_id": "202610182105",
      "rno": 5,
      "deadline": "10:34",
      "honmei_lane": 1,
-     "honmei_prob": 0.7069,
+     "honmei_prob": 0.7297,
      "flag": "solid",
-     "top1_combo": "1-2-6",
-     "top1_prob": 0.061
+     "top1_combo": "1-3-4",
+     "top1_prob": 0.0682
     },
     {
-     "race_id": "202610172106",
+     "race_id": "202610182106",
      "rno": 6,
      "deadline": "11:03",
-     "honmei_lane": 1,
-     "honmei_prob": 0.5608,
-     "flag": "solid",
-     "top1_combo": "1-4-6",
-     "top1_prob": 0.091
+     "honmei_lane": 2,
+     "honmei_prob": 0.384,
+     "flag": "mid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.0745
     },
     {
-     "race_id": "202610172107",
+     "race_id": "202610182107",
      "rno": 7,
-     "deadline": "11:32",
+     "deadline": "11:33",
      "honmei_lane": 1,
-     "honmei_prob": 0.6481,
-     "flag": "solid",
-     "top1_combo": "1-3-2",
-     "top1_prob": 0.1045
+     "honmei_prob": 0.4808,
+     "flag": "mid",
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.1075
     },
     {
-     "race_id": "202610172108",
+     "race_id": "202610182108",
      "rno": 8,
-     "deadline": "12:05",
+     "deadline": "12:02",
      "honmei_lane": 1,
-     "honmei_prob": 0.437,
-     "flag": "mid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.0733
+     "honmei_prob": 0.6874,
+     "flag": "solid",
+     "top1_combo": "1-3-4",
+     "top1_prob": 0.1115
     },
     {
-     "race_id": "202610172109",
+     "race_id": "202610182109",
      "rno": 9,
-     "deadline": "12:38",
+     "deadline": "12:32",
      "honmei_lane": 1,
-     "honmei_prob": 0.3437,
+     "honmei_prob": 0.4735,
      "flag": "mid",
-     "top1_combo": "1-3-2",
-     "top1_prob": 0.0632
+     "top1_combo": "1-2-3",
+     "top1_prob": 0.0563
     },
     {
-     "race_id": "202610172110",
+     "race_id": "202610182110",
      "rno": 10,
-     "deadline": "13:09",
+     "deadline": "13:05",
      "honmei_lane": 1,
-     "honmei_prob": 0.6012,
-     "flag": "solid",
+     "honmei_prob": 0.5476,
+     "flag": "mid",
      "top1_combo": "1-2-5",
-     "top1_prob": 0.0915
+     "top1_prob": 0.0588
     },
     {
-     "race_id": "202610172111",
+     "race_id": "202610182111",
      "rno": 11,
-     "deadline": "13:41",
+     "deadline": "13:42",
      "honmei_lane": 1,
-     "honmei_prob": 0.7239,
+     "honmei_prob": 0.7181,
      "flag": "solid",
-     "top1_combo": "1-3-2",
-     "top1_prob": 0.1173
+     "top1_combo": "1-3-4",
+     "top1_prob": 0.0997
     },
     {
-     "race_id": "202610172112",
+     "race_id": "202610182112",
      "rno": 12,
      "deadline": "14:20",
      "honmei_lane": 1,
-     "honmei_prob": 0.7765,
+     "honmei_prob": 0.753,
      "flag": "solid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.1143
+     "top1_combo": "1-3-4",
+     "top1_prob": 0.135
     }
    ]
   },
   {
-   "jcd": "24",
-   "name": "大村",
+   "jcd": "23",
+   "name": "唐津",
    "races": [
     {
-     "race_id": "202610172401",
+     "race_id": "202610182301",
      "rno": 1,
-     "deadline": "15:16",
+     "deadline": "10:38",
      "honmei_lane": 1,
-     "honmei_prob": 0.6262,
+     "honmei_prob": 0.5928,
      "flag": "solid",
      "top1_combo": "1-2-4",
-     "top1_prob": 0.129
+     "top1_prob": 0.0483
     },
     {
-     "race_id": "202610172402",
+     "race_id": "202610182302",
      "rno": 2,
-     "deadline": "15:47",
+     "deadline": "11:07",
      "honmei_lane": 1,
-     "honmei_prob": 0.5942,
-     "flag": "solid",
+     "honmei_prob": 0.2747,
+     "flag": "rough",
      "top1_combo": "1-2-3",
-     "top1_prob": 0.1044
+     "top1_prob": 0.0232
     },
     {
-     "race_id": "202610172403",
+     "race_id": "202610182303",
      "rno": 3,
-     "deadline": "16:11",
+     "deadline": "11:36",
      "honmei_lane": 1,
-     "honmei_prob": 0.5033,
+     "honmei_prob": 0.3719,
+     "flag": "mid",
+     "top1_combo": "1-3-6",
+     "top1_prob": 0.0405
+    },
+    {
+     "race_id": "202610182304",
+     "rno": 4,
+     "deadline": "12:06",
+     "honmei_lane": 1,
+     "honmei_prob": 0.3982,
+     "flag": "mid",
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.0375
+    },
+    {
+     "race_id": "202610182305",
+     "rno": 5,
+     "deadline": "12:36",
+     "honmei_lane": 1,
+     "honmei_prob": 0.428,
+     "flag": "mid",
+     "top1_combo": "1-5-3",
+     "top1_prob": 0.0289
+    },
+    {
+     "race_id": "202610182306",
+     "rno": 6,
+     "deadline": "13:07",
+     "honmei_lane": 1,
+     "honmei_prob": 0.4508,
+     "flag": "mid",
+     "top1_combo": "1-2-5",
+     "top1_prob": 0.0402
+    },
+    {
+     "race_id": "202610182307",
+     "rno": 7,
+     "deadline": "13:38",
+     "honmei_lane": 1,
+     "honmei_prob": 0.2916,
+     "flag": "rough",
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.0384
+    },
+    {
+     "race_id": "202610182308",
+     "rno": 8,
+     "deadline": "14:11",
+     "honmei_lane": 1,
+     "honmei_prob": 0.3132,
      "flag": "mid",
      "top1_combo": "1-3-4",
-     "top1_prob": 0.0628
+     "top1_prob": 0.104
     },
     {
-     "race_id": "202610172404",
-     "rno": 4,
+     "race_id": "202610182309",
+     "rno": 9,
+     "deadline": "14:45",
+     "honmei_lane": 1,
+     "honmei_prob": 0.3431,
+     "flag": "mid",
+     "top1_combo": "2-5-6",
+     "top1_prob": 0.0604
+    },
+    {
+     "race_id": "202610182310",
+     "rno": 10,
+     "deadline": "15:21",
+     "honmei_lane": 1,
+     "honmei_prob": 0.6693,
+     "flag": "solid",
+     "top1_combo": "1-2-4",
+     "top1_prob": 0.0693
+    },
+    {
+     "race_id": "202610182311",
+     "rno": 11,
+     "deadline": "15:57",
+     "honmei_lane": 1,
+     "honmei_prob": 0.7717,
+     "flag": "solid",
+     "top1_combo": "1-5-3",
+     "top1_prob": 0.0591
+    },
+    {
+     "race_id": "202610182312",
+     "rno": 12,
      "deadline": "16:36",
      "honmei_lane": 1,
-     "honmei_prob": 0.6995,
+     "honmei_prob": 0.704,
      "flag": "solid",
      "top1_combo": "1-2-5",
-     "top1_prob": 0.1006
-    },
-    {
-     "race_id": "202610172405",
-     "rno": 5,
-     "deadline": "17:01",
-     "honmei_lane": 1,
-     "honmei_prob": 0.659,
-     "flag": "solid",
-     "top1_combo": "1-3-5",
-     "top1_prob": 0.0999
-    },
-    {
-     "race_id": "202610172406",
-     "rno": 6,
-     "deadline": "17:27",
-     "honmei_lane": 1,
-     "honmei_prob": 0.6876,
-     "flag": "solid",
-     "top1_combo": "1-3-5",
-     "top1_prob": 0.1067
-    },
-    {
-     "race_id": "202610172407",
-     "rno": 7,
-     "deadline": "17:55",
-     "honmei_lane": 1,
-     "honmei_prob": 0.7653,
-     "flag": "solid",
-     "top1_combo": "1-3-4",
-     "top1_prob": 0.1512
-    },
-    {
-     "race_id": "202610172408",
-     "rno": 8,
-     "deadline": "18:25",
-     "honmei_lane": 1,
-     "honmei_prob": 0.5781,
-     "flag": "solid",
-     "top1_combo": "1-2-5",
-     "top1_prob": 0.0781
-    },
-    {
-     "race_id": "202610172409",
-     "rno": 9,
-     "deadline": "18:55",
-     "honmei_lane": 1,
-     "honmei_prob": 0.5017,
-     "flag": "mid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.0703
-    },
-    {
-     "race_id": "202610172410",
-     "rno": 10,
-     "deadline": "19:23",
-     "honmei_lane": 1,
-     "honmei_prob": 0.6699,
-     "flag": "solid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.072
-    },
-    {
-     "race_id": "202610172411",
-     "rno": 11,
-     "deadline": "20:03",
-     "honmei_lane": 1,
-     "honmei_prob": 0.7876,
-     "flag": "solid",
-     "top1_combo": "1-2-3",
-     "top1_prob": 0.1805
-    },
-    {
-     "race_id": "202610172412",
-     "rno": 12,
-     "deadline": "20:31",
-     "honmei_lane": 1,
-     "honmei_prob": 0.7745,
-     "flag": "solid",
-     "top1_combo": "1-2-4",
-     "top1_prob": 0.092
+     "top1_prob": 0.0865
     }
    ]
   }
