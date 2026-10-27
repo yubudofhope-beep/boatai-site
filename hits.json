@@ -2,6 +2,15 @@
  "date": "20261027",
  "items": [
   {
+   "race_id": "202610270501",
+   "venue": "多摩川",
+   "rno": 1,
+   "combo": "6-1-2",
+   "payout": 2630,
+   "hit": false,
+   "model_rank": 37
+  },
+  {
    "race_id": "202610270801",
    "venue": "常滑",
    "rno": 1,
@@ -9,6 +18,15 @@
    "payout": 20140,
    "hit": false,
    "model_rank": 31
+  },
+  {
+   "race_id": "202610270802",
+   "venue": "常滑",
+   "rno": 2,
+   "combo": "1-2-4",
+   "payout": 1770,
+   "hit": true,
+   "model_rank": 4
   },
   {
    "race_id": "202610270901",
@@ -128,5 +146,5 @@
    "model_rank": 33
   }
  ],
- "updated": "10:48:21"
+ "updated": "10:53:13"
 }
