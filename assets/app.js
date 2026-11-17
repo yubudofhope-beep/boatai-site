@@ -329,17 +329,17 @@
     if (cardsEl) {
       var htmlCards =
         card("昨日の上位10点内的中", (last.top10_hits ?? "-") + "/" + last.n_judged +
-          " (" + (last.top10_rate ?? "-") + "%)");
+          " (" + (last.top10_rate == null ? "-" : Math.ceil(last.top10_rate)) + "%)");
       if (last.top20_hits != null) {
         htmlCards += card("昨日の上位20点内的中", last.top20_hits + "/" + last.n_judged +
-          " (" + (last.top20_rate ?? "-") + "%)");
+          " (" + (last.top20_rate == null ? "-" : Math.ceil(last.top20_rate)) + "%)");
       }
       htmlCards +=
         card("昨日の1点買い収支", (last.pnl >= 0 ? "+" : "") + (last.pnl ?? 0).toLocaleString() + "円",
           last.pnl >= 0 ? "plus" : "minus") +
-        card("累計 上位10点内率", totalN ? Math.round(totalTop10 / totalN * 100) + "%" : "-");
+        card("累計 上位10点内率", totalN ? Math.ceil(totalTop10 / totalN * 100) + "%" : "-");
       if (totalN20) {
-        htmlCards += card("累計 上位20点内率", Math.round(totalTop20 / totalN20 * 100) + "%");
+        htmlCards += card("累計 上位20点内率", Math.ceil(totalTop20 / totalN20 * 100) + "%");
       }
       htmlCards +=
         card("累計 1点買い収支 (" + valid.length + "日)",
@@ -381,7 +381,7 @@
       card("的中数", hits.toLocaleString() + "本") +
       card("総投資額", invest.toLocaleString() + "円") +
       card("総回収額", returned.toLocaleString() + "円") +
-      card("回収率", roi.toFixed(1) + "%", roi >= 100 ? "plus" : "minus");
+      card("回収率", Math.ceil(roi) + "%", roi >= 100 ? "plus" : "minus");
     drawMarkBetsChart(canvas, fb, valid);
   }
 
@@ -417,7 +417,11 @@
       },
       options: {
         responsive: true,
-        plugins: { legend: { labels: { color: "#e5e9f0" } } },
+        plugins: { legend: { labels: { color: "#e5e9f0" } },
+          tooltip: { callbacks: { label: function (ctx) {
+            return ctx.dataset.label + ": " + (ctx.dataset.yAxisID === "y"
+              ? Math.ceil(ctx.parsed.y) + "%" : ctx.parsed.y.toLocaleString() + "円");
+          } } } },
         scales: {
           x: { ticks: { color: "#9aa5b5" }, grid: { color: "#22314a" } },
           y: { min: 0, max: 100, ticks: { color: "#9aa5b5" }, grid: { color: "#22314a" } },
@@ -451,7 +455,11 @@
       },
       options: {
         responsive: true,
-        plugins: { legend: { labels: { color: "#e5e9f0" } } },
+        plugins: { legend: { labels: { color: "#e5e9f0" } },
+          tooltip: { callbacks: { label: function (ctx) {
+            return ctx.dataset.label + ": " + (ctx.dataset.yAxisID === "y"
+              ? Math.ceil(ctx.parsed.y) + "%" : ctx.parsed.y.toLocaleString() + "円");
+          } } } },
         scales: {
           x: { ticks: { color: "#9aa5b5" }, grid: { color: "#22314a" } },
           y: { min: 0, max: 100, ticks: { color: "#9aa5b5" }, grid: { color: "#22314a" } },
