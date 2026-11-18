@@ -2373,5 +2373,24 @@
   "roi_top10": -30340,
   "roi_top20": -58670,
   "settlement": "refund_inclusive_v2"
+ },
+ {
+  "date": "20261118",
+  "n_races": 132,
+  "n_result": 120,
+  "n_judged": 132,
+  "top10_hits": 64,
+  "top10_rate": 48.484848484848484,
+  "top20_hits": 77,
+  "top20_rate": 58.333333333333336,
+  "win_hits": 65,
+  "win_rate": 49.24242424242424,
+  "tan_hits": 11,
+  "pnl": -2230,
+  "ret": 10970,
+  "cost": 13200,
+  "roi_top10": 12260,
+  "roi_top20": -59210,
+  "settlement": "refund_inclusive_v2"
  }
 ]

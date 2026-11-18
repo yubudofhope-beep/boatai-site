@@ -32048,5 +32048,259 @@
    }
   },
   "missing_sources": []
+ },
+ {
+  "date": "20261118",
+  "stats": {
+   "morning": {
+    "1": {
+     "races": 132,
+     "points": 132,
+     "hits": 11,
+     "hit_races": 11,
+     "hit_rate": 8.333333333333334,
+     "ticket_hit_rate": 8.333333333333334,
+     "invest_yen": 13200,
+     "payout_yen": 9570,
+     "refund_yen": 1400,
+     "return_yen": 10970,
+     "roi_pct": 83.10606060606061,
+     "profit_yen": -2230
+    },
+    "3": {
+     "races": 132,
+     "points": 396,
+     "hits": 29,
+     "hit_races": 29,
+     "hit_rate": 21.96969696969697,
+     "ticket_hit_rate": 7.3232323232323235,
+     "invest_yen": 39600,
+     "payout_yen": 30990,
+     "refund_yen": 4100,
+     "return_yen": 35090,
+     "roi_pct": 88.61111111111111,
+     "profit_yen": -4510
+    },
+    "5": {
+     "races": 132,
+     "points": 660,
+     "hits": 40,
+     "hit_races": 40,
+     "hit_rate": 30.303030303030305,
+     "ticket_hit_rate": 6.0606060606060606,
+     "invest_yen": 66000,
+     "payout_yen": 52040,
+     "refund_yen": 6900,
+     "return_yen": 58940,
+     "roi_pct": 89.3030303030303,
+     "profit_yen": -7060
+    },
+    "10": {
+     "races": 132,
+     "points": 1320,
+     "hits": 64,
+     "hit_races": 64,
+     "hit_rate": 48.484848484848484,
+     "ticket_hit_rate": 4.848484848484849,
+     "invest_yen": 132000,
+     "payout_yen": 130460,
+     "refund_yen": 13800,
+     "return_yen": 144260,
+     "roi_pct": 109.28787878787878,
+     "profit_yen": 12260
+    },
+    "20": {
+     "races": 132,
+     "points": 2640,
+     "hits": 77,
+     "hit_races": 77,
+     "hit_rate": 58.333333333333336,
+     "ticket_hit_rate": 2.9166666666666665,
+     "invest_yen": 264000,
+     "payout_yen": 177590,
+     "refund_yen": 27200,
+     "return_yen": 204790,
+     "roi_pct": 77.5719696969697,
+     "profit_yen": -59210
+    }
+   },
+   "live": {
+    "1": {
+     "races": 114,
+     "points": 114,
+     "hits": 11,
+     "hit_races": 11,
+     "hit_rate": 9.649122807017545,
+     "ticket_hit_rate": 9.649122807017545,
+     "invest_yen": 11400,
+     "payout_yen": 8450,
+     "refund_yen": 200,
+     "return_yen": 8650,
+     "roi_pct": 75.87719298245614,
+     "profit_yen": -2750
+    },
+    "3": {
+     "races": 114,
+     "points": 342,
+     "hits": 27,
+     "hit_races": 27,
+     "hit_rate": 23.68421052631579,
+     "ticket_hit_rate": 7.894736842105263,
+     "invest_yen": 34200,
+     "payout_yen": 25910,
+     "refund_yen": 600,
+     "return_yen": 26510,
+     "roi_pct": 77.51461988304094,
+     "profit_yen": -7690
+    },
+    "5": {
+     "races": 114,
+     "points": 570,
+     "hits": 40,
+     "hit_races": 40,
+     "hit_rate": 35.08771929824562,
+     "ticket_hit_rate": 7.017543859649122,
+     "invest_yen": 57000,
+     "payout_yen": 51740,
+     "refund_yen": 900,
+     "return_yen": 52640,
+     "roi_pct": 92.35087719298245,
+     "profit_yen": -4360
+    },
+    "10": {
+     "races": 114,
+     "points": 1140,
+     "hits": 54,
+     "hit_races": 54,
+     "hit_rate": 47.36842105263158,
+     "ticket_hit_rate": 4.7368421052631575,
+     "invest_yen": 114000,
+     "payout_yen": 91050,
+     "refund_yen": 1800,
+     "return_yen": 92850,
+     "roi_pct": 81.44736842105263,
+     "profit_yen": -21150
+    }
+   }
+  },
+  "paired": {
+   "morning": {
+    "1": {
+     "races": 114,
+     "points": 114,
+     "hits": 11,
+     "hit_races": 11,
+     "hit_rate": 9.649122807017545,
+     "ticket_hit_rate": 9.649122807017545,
+     "invest_yen": 11400,
+     "payout_yen": 9570,
+     "refund_yen": 200,
+     "return_yen": 9770,
+     "roi_pct": 85.70175438596492,
+     "profit_yen": -1630
+    },
+    "3": {
+     "races": 114,
+     "points": 342,
+     "hits": 27,
+     "hit_races": 27,
+     "hit_rate": 23.68421052631579,
+     "ticket_hit_rate": 7.894736842105263,
+     "invest_yen": 34200,
+     "payout_yen": 27280,
+     "refund_yen": 500,
+     "return_yen": 27780,
+     "roi_pct": 81.2280701754386,
+     "profit_yen": -6420
+    },
+    "5": {
+     "races": 114,
+     "points": 570,
+     "hits": 38,
+     "hit_races": 38,
+     "hit_rate": 33.333333333333336,
+     "ticket_hit_rate": 6.666666666666667,
+     "invest_yen": 57000,
+     "payout_yen": 48330,
+     "refund_yen": 900,
+     "return_yen": 49230,
+     "roi_pct": 86.36842105263158,
+     "profit_yen": -7770
+    },
+    "10": {
+     "races": 114,
+     "points": 1140,
+     "hits": 60,
+     "hit_races": 60,
+     "hit_rate": 52.63157894736842,
+     "ticket_hit_rate": 5.2631578947368425,
+     "invest_yen": 114000,
+     "payout_yen": 121810,
+     "refund_yen": 1800,
+     "return_yen": 123610,
+     "roi_pct": 108.4298245614035,
+     "profit_yen": 9610
+    }
+   },
+   "live": {
+    "1": {
+     "races": 114,
+     "points": 114,
+     "hits": 11,
+     "hit_races": 11,
+     "hit_rate": 9.649122807017545,
+     "ticket_hit_rate": 9.649122807017545,
+     "invest_yen": 11400,
+     "payout_yen": 8450,
+     "refund_yen": 200,
+     "return_yen": 8650,
+     "roi_pct": 75.87719298245614,
+     "profit_yen": -2750
+    },
+    "3": {
+     "races": 114,
+     "points": 342,
+     "hits": 27,
+     "hit_races": 27,
+     "hit_rate": 23.68421052631579,
+     "ticket_hit_rate": 7.894736842105263,
+     "invest_yen": 34200,
+     "payout_yen": 25910,
+     "refund_yen": 600,
+     "return_yen": 26510,
+     "roi_pct": 77.51461988304094,
+     "profit_yen": -7690
+    },
+    "5": {
+     "races": 114,
+     "points": 570,
+     "hits": 40,
+     "hit_races": 40,
+     "hit_rate": 35.08771929824562,
+     "ticket_hit_rate": 7.017543859649122,
+     "invest_yen": 57000,
+     "payout_yen": 51740,
+     "refund_yen": 900,
+     "return_yen": 52640,
+     "roi_pct": 92.35087719298245,
+     "profit_yen": -4360
+    },
+    "10": {
+     "races": 114,
+     "points": 1140,
+     "hits": 54,
+     "hit_races": 54,
+     "hit_rate": 47.36842105263158,
+     "ticket_hit_rate": 4.7368421052631575,
+     "invest_yen": 114000,
+     "payout_yen": 91050,
+     "refund_yen": 1800,
+     "return_yen": 92850,
+     "roi_pct": 81.44736842105263,
+     "profit_yen": -21150
+    }
+   }
+  },
+  "missing_sources": []
  }
 ]
