@@ -2,6 +2,18 @@
  "date": "20261118",
  "items": [
   {
+   "race_id": "202611180801",
+   "venue": "常滑",
+   "rno": 1,
+   "combo": "1-4-2",
+   "payout": 980,
+   "hit": true,
+   "model_rank": 5,
+   "prediction_phase": "morning",
+   "live_top10_rank": 2,
+   "live_top10_hit": true
+  },
+  {
    "race_id": "202611181401",
    "venue": "鳴門",
    "rno": 1,
@@ -48,6 +60,18 @@
    "prediction_phase": "morning",
    "live_top10_rank": 4,
    "live_top10_hit": true
+  },
+  {
+   "race_id": "202611181405",
+   "venue": "鳴門",
+   "rno": 5,
+   "combo": "5-2-4",
+   "payout": 4410,
+   "hit": false,
+   "model_rank": 32,
+   "prediction_phase": "morning",
+   "live_top10_rank": null,
+   "live_top10_hit": false
   },
   {
    "race_id": "202611181701",
@@ -110,5 +134,5 @@
    "live_top10_hit": true
   }
  ],
- "updated": "10:22:17"
+ "updated": "10:31:25"
 }
