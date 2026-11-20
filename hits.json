@@ -14,6 +14,18 @@
    "live_top10_hit": true
   },
   {
+   "race_id": "202611200102",
+   "venue": "桐生",
+   "rno": 2,
+   "combo": "2-4-1",
+   "payout": 2150,
+   "hit": true,
+   "model_rank": 12,
+   "prediction_phase": "morning",
+   "live_top10_rank": null,
+   "live_top10_hit": false
+  },
+  {
    "race_id": "202611200202",
    "venue": "戸田",
    "rno": 2,
@@ -960,7 +972,19 @@
    "prediction_phase": "morning",
    "live_top10_rank": null,
    "live_top10_hit": false
+  },
+  {
+   "race_id": "202611202402",
+   "venue": "大村",
+   "rno": 2,
+   "combo": "3-2-5",
+   "payout": 5090,
+   "hit": false,
+   "model_rank": 39,
+   "prediction_phase": "morning",
+   "live_top10_rank": null,
+   "live_top10_hit": false
   }
  ],
- "updated": "15:47:23"
+ "updated": "15:52:23"
 }
