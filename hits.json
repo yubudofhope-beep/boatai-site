@@ -422,6 +422,18 @@
    "live_top10_hit": false
   },
   {
+   "race_id": "202611220702",
+   "venue": "蒲郡",
+   "rno": 2,
+   "combo": "4-6-1",
+   "payout": 1160,
+   "hit": true,
+   "model_rank": 7,
+   "prediction_phase": "morning",
+   "live_top10_rank": 9,
+   "live_top10_hit": true
+  },
+  {
    "race_id": "202611220901",
    "venue": "津",
    "rno": 1,
@@ -1394,6 +1406,18 @@
    "live_top10_hit": true
   },
   {
+   "race_id": "202611222211",
+   "venue": "福岡",
+   "rno": 11,
+   "combo": "1-4-3",
+   "payout": 4980,
+   "hit": true,
+   "model_rank": 19,
+   "prediction_phase": "morning",
+   "live_top10_rank": null,
+   "live_top10_hit": false
+  },
+  {
    "race_id": "202611222401",
    "venue": "大村",
    "rno": 1,
@@ -1404,7 +1428,19 @@
    "prediction_phase": "morning",
    "live_top10_rank": null,
    "live_top10_hit": false
+  },
+  {
+   "race_id": "202611222402",
+   "venue": "大村",
+   "rno": 2,
+   "combo": "1-4-5",
+   "payout": 1990,
+   "hit": true,
+   "model_rank": 5,
+   "prediction_phase": "morning",
+   "live_top10_rank": 3,
+   "live_top10_hit": true
   }
  ],
- "updated": "15:45:30"
+ "updated": "15:51:21"
 }
