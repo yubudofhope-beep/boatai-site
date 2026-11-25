@@ -86,6 +86,18 @@
    "live_top10_hit": true
   },
   {
+   "race_id": "202611250508",
+   "venue": "多摩川",
+   "rno": 8,
+   "combo": "1-2-6",
+   "payout": 1090,
+   "hit": true,
+   "model_rank": 1,
+   "prediction_phase": "morning",
+   "live_top10_rank": 2,
+   "live_top10_hit": true
+  },
+  {
    "race_id": "202611250801",
    "venue": "常滑",
    "rno": 1,
@@ -167,6 +179,18 @@
    "model_rank": 5,
    "prediction_phase": "morning",
    "live_top10_rank": 1,
+   "live_top10_hit": true
+  },
+  {
+   "race_id": "202611250808",
+   "venue": "常滑",
+   "rno": 8,
+   "combo": "1-2-3",
+   "payout": 710,
+   "hit": true,
+   "model_rank": 2,
+   "prediction_phase": "morning",
+   "live_top10_rank": 3,
    "live_top10_hit": true
   },
   {
@@ -818,5 +842,5 @@
    "live_top10_hit": false
   }
  ],
- "updated": "13:47:18"
+ "updated": "13:55:13"
 }
